@@ -12,7 +12,7 @@ public class C02Scanner {
 //				System.out.print("정수 입력 :");
 //				int num1 = sc.nextInt();
 //				System.out.println("입력된 정수 값 : "+num1);
-//				
+////				
 //				System.out.print("실수 입력 :");
 //				double num2 = sc.nextDouble();
 //				System.out.println("입력된 실수 값 : "+num2);
@@ -26,31 +26,37 @@ public class C02Scanner {
 //				String s3 = sc.next();
 //				System.out.printf("문자열 : %s %s %s\n",s1,s2,s3);
 
-//				System.out.print("문자열 입력 : " );
-//				String str = sc.nextLine();
-//				System.out.println("문자열 : " +  str);
+			System.out.print("실수 입력 :");
+			double num2 = sc.nextDouble();
+			System.out.println("입력된 실수 값 : "+num2);
+			sc.nextLine();
+				System.out.print("문자열 입력 : " );
+				String str = sc.nextLine();
+				System.out.println("문자열 : " +  str);
+				
+
 
 		// 주의 사항!!여러개의 값을 Scanner로 받을때
 		
 
 
-		System.out.print("정수값 입력 : ");
-		int n1 = sc.nextInt();
-		System.out.println("정수값 : " + n1);
-		System.out.print("실수값 입력 : ");
-		double n2 = sc.nextDouble();
-
-		// 여기서 문제발생!
-		System.out.print("문자열입력 : ");
-		String str2 = sc.nextLine();
-		System.out.println("문자열 : " + str2);
-		System.out.print("문자열입력 : ");
-		
-
-		String str = sc.next();
-		System.out.println("문자열 : " + str);
-
-		System.out.println("프로그램을 종료합니다..");
+//		System.out.print("정수값 입력 : ");
+//		int n1 = sc.nextInt();
+//		System.out.println("정수값 : " + n1);
+//		System.out.print("실수값 입력 : ");
+//		double n2 = sc.nextDouble();
+//
+//		// 여기서 문제발생!
+//		System.out.print("문자열입력 : ");
+//		String str2 = sc.nextLine();
+//		System.out.println("문자열 : " + str2);
+//		System.out.print("문자열입력 : ");
+//		
+//
+//		String str = sc.next();
+//		System.out.println("문자열 : " + str);
+//
+//		System.out.println("프로그램을 종료합니다..");
 
 	}
 }

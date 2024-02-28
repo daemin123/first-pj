@@ -14,15 +14,23 @@ public class C01Scanner {
 				// Scanner장치를 main함수내에서 제어(사용)할 수 있도록 
 				// 참조변수 sc 연결
 			
+			   //System.out.println(System.class);
+			   //System.out.println(System.in);
+			   
 			   Scanner sc = new Scanner(System.in);    
-			  
-			   int num1 = sc.nextInt(); 	 
-			   int num2 = sc.nextInt();  			 
-			   int num3 = sc.nextInt();  			 
+//			  	
+			   
+			   System.out.printf("num1 입력 : ");
+			   int num1 = sc.nextInt(); //엔터(\n),스페이스바	 
+			   System.out.printf("num2 입력 : ");
+			   int num2 = sc.nextInt();  		
+			   System.out.printf("num3 입력 : ");
+			   int num3 = sc.nextInt();  		
+			   System.out.printf("num4 입력 : ");
 			   int num4 = sc.nextInt();
-			   int sum = num1 + num2 + num3 + num4;
-			   System.out.printf("%d + %d + %d +%d = %d \n", num1, num2, num3,num4, sum);
-			   sc.close();
+//			   int sum = num1 + num2 + num3 + num4;
+//			   System.out.printf("%d + %d + %d +%d = %d \n", num1, num2, num3,num4, sum);
+//			   sc.close();
 	}
 }
 
