@@ -14,16 +14,15 @@ public class C03변수상수자료형 {
 		//대입연산자(=)
 		
 		//lv(공간) = rv(값 - 먼저처리)
-	
+		
+		
 		int num1;					//	4byte정수 공간 num1 정의
 		num1 = 10;					//	10상수 값을 num1공간에 대입
 		int num2 = 4;				//	4상수 값을 4byte 정수 num2공간에 초기화
 		int num3 = num1 + num2;		//	num1의 값과 num2값의 합을 4byte 정수 num3공간에 초기화
 		System.out.println(num3);	//	num3값을 콘솔창에 출력
 		
-		
-		
-		
 	}
+	
 	
 }
