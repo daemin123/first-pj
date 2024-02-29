@@ -8,8 +8,9 @@ public class C04ShiftArith {
 		int num3 = num2<<3; //00000000 00000000 00000000 00111100
 		int num4 = num2>>3; //00000000 00000000 00000000 00000011
 		
-		System.out.println("<<Shift 연산결과 :" + num3);
-		System.out.println(">>Shift 연산결과 :" + num4);
+//		System.out.println("<<Shift 연산결과 :" + num3);
+//		System.out.println(">>Shift 연산결과 :" + num4);
+		
 
 	}
 

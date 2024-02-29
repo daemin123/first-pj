@@ -50,7 +50,7 @@ public class C01IF {
 
 		//입력값 받기 + if
 		
-	
+//	
 //		Scanner sc = new Scanner(System.in);
 //		
 //		System.out.print("정수 1 입력 : ");
@@ -70,21 +70,30 @@ public class C01IF {
 		//문제
 		// 정수 한개값을 입력받아 3의 배수이면 해당 수를 출력하세요
 		// 3의 배수이면서 5의 배수라면 출력 - 
-//		Scanner sc = new Scanner(System.in);
-//		int n = sc.nextInt();
-//		if(n%3==0&&n%5==0)
-//		{
-//			System.out.println(n+" 은 3의 배수 이면서 5의배수입니다.");
-//		}
-//		else
-//		{
-//			//n이 3의 배수가 아니거나
-//			//n이 5의 배수가 아니거나
-//			//n이 3의배수도 아니고 5의배수가 아닌경우
-//			System.out.println(n+" 은 3의배수가 아닙니다.");
-//		}
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		if(n%3==0&&n%5==0)
+		{
+			System.out.println(n+" 은 3의 배수 이면서 5의배수입니다.");
+		}
+		else
+		{
+			if(n%3!=0 && n%5==0) {
+				
+			}
+			else if(n%3==0 && n%5!=0) {
+				
+			}
+			else {
+				
+			}
+			//n이 3의 배수가 아니거나
+			//n이 5의 배수가 아니거나
+			//n이 3의배수도 아니고 5의배수가 아닌경우
+			System.out.println(n+" 은 3의배수가 아닙니다.");
+		}
 		
-		
+	
 		
 		
 		

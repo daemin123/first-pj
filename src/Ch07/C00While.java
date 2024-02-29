@@ -7,10 +7,9 @@ public class C00While {
 	public static void main(String[] args) {
 		
 		
-		
-		
+			
 		//01 반복문 기본
-		
+//		
 //		int i=1;		// 1 탈출용 변수
 //		while(i<=10) 	// 2 탈출 조건식
 //		{
@@ -27,11 +26,11 @@ public class C00While {
 //		while(i<=10) 	// 2 탈출 조건식
 //		{
 //			System.out.println("i : " + i);
-//			sum = sum + i;
+//			sum += i;
 //			i++;		// 3 탈출을 위한 연산
 //		}
 //		System.out.println("SUM : " + sum);
-		
+
 		//04 1 - N 까지의 합
 //		Scanner sc = new Scanner(System.in);
 //		int n = sc.nextInt();

@@ -14,6 +14,7 @@ public class C01basic {
 //		System.out.println("a%b="+ (a % b));//나누기 - 나머지(1.짝홀수구분,2.배수구분,3.자리수제한,4.끝자리구하기)
 //		System.out.println("-a="+ -a);
 
+		
 		//문제	
 //		두수를 입력 받아 두수의 합/차/곱을 출력하는 프로그램을 만들어보세요
 //		Scanner 를 사용합니다
@@ -23,7 +24,7 @@ public class C01basic {
 //		System.out.println("합 : " + (n1 + n2));
 //		System.out.println("곱 : " + (n1 * n2));
 //		System.out.println("차 : " + (n1 - n2));
-//		
+////		
 //		sc.close();
 		
 		

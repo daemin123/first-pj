@@ -81,18 +81,59 @@ public class PRAC {
 		
 		Scanner sc = new Scanner(System.in);
 		int n1=sc.nextInt(),n2=sc.nextInt(),n3=sc.nextInt();
+		
 		if(n1>=n2&&n1>=n3)
 		{
 			System.out.println("큰수 : "+n1);
+			//n2,n3 중 작은수
+			if(n2>n3) {
+				System.out.println("작은수 : " + n3);
+			}else {
+				System.out.println("작은수 : " + n2);
+			}
 		}
-		else if(n2>=n1&&n2>=n3){
+		else if(n2>=n1&&n2>=n3)	//n1은 n2보다 작거나 , n1 n3보다 작거나~
+		{
 			System.out.println("큰수 : "+n2);
+			//n1,n3 중 작은수
+			if(n1>n3) {
+				System.out.println("작은수 : " + n3);
+			}else {
+				System.out.println("작은수 : " + n1);
+			}
 		}
 		else {
 			System.out.println("큰수 : "+n3);
+			//n1,n2 중 작은수
+			if(n1>n2) {
+				System.out.println("작은수 : " + n2);
+			}else {
+				System.out.println("작은수 : " + n1);
+			}
 		}
 		
-	
+
+		
+		//문제
+		// 세 정수를 입력받아 세 정수 중에 가장 큰수와 가장 작은수를 출력
+
+//		Scanner sc = new Scanner(System.in);
+//		int n1 = sc.nextInt();
+//		int n2 = sc.nextInt();
+//		int n3 = sc.nextInt();
+//		int n4 = sc.nextInt();
+		
+		//n1이 가장큰경우
+		
+		//n2이 가장큰경우
+		//n3이 가장큰경우
+		//n4이 가장큰경우
+		
+		
+		
+		
+		
+
 		
 	}
 
