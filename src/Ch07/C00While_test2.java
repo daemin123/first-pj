@@ -98,6 +98,33 @@ public class C00While_test2 {
 //		i<n		j<4
 //		i++		j++
 		
+//		int i=0; //행증가
+//		int j=0; //별찍기
+//		Scanner sc = new Scanner(System.in);
+//		int n = sc.nextInt();
+//		while(i<n) {
+//			j=0;
+//			while(j<4) {
+//				System.out.print("*");
+//				j++;
+//			}
+//			System.out.println();
+//			i++; 
+//		}
+		
+		//*
+		//**
+		//***
+		//****
+//		i		j
+//		0		0-0
+//		1		0-1
+//		2		0-2
+//		3		0-3
+//		----------------------------
+//		i=0		j=0
+//		i<4		j<=i
+//		i++		j++
 		int i=0; //행증가
 		int j=0; //별찍기
 		while(i<4) {
@@ -109,7 +136,8 @@ public class C00While_test2 {
 			}
 			System.out.println();
 			i++; 
-		}
+		}	
+		
 	}
 
 }
