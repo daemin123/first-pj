@@ -153,23 +153,61 @@ public class C00While_test2 {
 //		i<n		j<=i
 //		i++		j++
 		
-		int i=0; //행증가
-		int j=0; //별찍기
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		while(i<4) {
-			
-			j=0;
-			while(j<=i) {
-				System.out.print("*");
-				j++;
-			}
-			System.out.println();
-			i++; 
-		}	
+//		int i=0; //행증가
+//		int j=0; //별찍기
+//		Scanner sc = new Scanner(System.in);
+//		int n = sc.nextInt();
+//		while(i<n) {
+//			
+//			j=0;
+//			while(j<=i) {
+//				System.out.print("*");
+//				j++;
+//			}
+//			System.out.println();
+//			i++; 
+//		}	
 		
 		
+		 //000*
+		 //00***
+		 //0*****
+		 //*******
+//		높이 : n
+//		i(행)		j(공백)		k(별)
+//		0		0-(n-2)		0-0
+//		1		0-1		0-2
+//		2		0-0		0-4	
+//		3		x		0-6
+//		n-1
+//		------------------------------------------------
+//		i=0		j=0		k=0
+//		i<n		j<=(n-2)-i		k<=i*2
+//		i++		j++		k++
+
 		
+		 int i=0;
+		 int j=0;
+		 int k=0;
+		 Scanner sc = new Scanner(System.in);
+		 int n  = sc.nextInt();
+		 while(i<n) {
+			 //공백
+			 j=0;
+			 while(j<=(n-2)-i) {
+				 System.out.print(" ");;
+				 j++;
+			 }
+			 //별
+			 k=0;
+			 while(k<=i*2) {
+				 System.out.print("*");;
+				 k++;
+			 }			 
+			 System.out.println();
+			 i++;
+		 }
+		 
 	}
 
 }
