@@ -1,5 +1,7 @@
 package Ch07;
 
+import java.util.Scanner;
+
 public class C00While_test2 {
 
 	public static void main(String[] args) {
@@ -36,23 +38,65 @@ public class C00While_test2 {
 //	
 //		}
 		
-		//구구단 출력(2단 - N단)
-		//N은 Scanner로 받습니다.
-		int dan=9;
-		int i;
-		while(dan>=2) {
+		
+//		//구구단 출력(2단 - N단)
+//		//N은 Scanner로 받습니다.
+//		Scanner sc = new Scanner(System.in);
+//		int n=sc.nextInt();
+//		while(n>9) { 
+//			System.out.println("다시입력하세요.");
+//			n=sc.nextInt();
+//		}
+//		
+//		int dan=2;
+//		int i;
+//		while(dan<=n) {
+//			
+//			i=1;
+//			while(i<=9) {
+//				
+//				System.out.printf("%d x %d = %d\n",dan,i,dan*i);
+//				i++;
+//			}
+//			System.out.println();
+//		}
+		
+		//4행 별찍 -> 높이 입력 별찍기
+		//****
+		//****
+		//****
+		//****
+		
+//		int i=0; //행증가
+//		int j=0; //별찍기
+//		while(i<4) {
+//			
+//			j=0;
+//			while(j<4) {
+//				System.out.print("*");
+//				j++;
+//			}
+//			System.out.println();
+//			i++; 
+//		}
+		
+		//높이 : n
+		//****
+		//****
+		//****
+		//****	
+		int i=0; //행증가
+		int j=0; //별찍기
+		while(i<4) {
 			
-			i=9;
-			while(i>=1) {
-				
-				System.out.printf("%d x %d = %d\n",dan,i,dan*i);
-				i--;
+			j=0;
+			while(j<4) {
+				System.out.print("*");
+				j++;
 			}
 			System.out.println();
-			dan--;
-	
-		}	
-		
+			i++; 
+		}
 	}
 
 }
