@@ -1,7 +1,8 @@
 package Ch99;
 
 
-class Buyer{
+class Buyer
+{
 	int myMoney;
 	int appleCnt;
 	Buyer(int money,int cnt){
@@ -17,7 +18,8 @@ class Buyer{
 
 	
 }
-class Seller{
+class Seller
+{
 	int myMoney;
 	int appleCnt;
 	public int price;
