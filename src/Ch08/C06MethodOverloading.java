@@ -1,39 +1,35 @@
 package Ch08;
 
-class C06Simple{
-	String name;
-	int sum(int x,int y) {
-		System.out.println("sum(int,int)호출!");
-		return x+y;
-		}
-	int sum(double x , double y) {
-		System.out.println("sum(double,double)호출!");
-		return (int)(x+y);
-		}
-	int sum(int x,int y,int z) {
-		System.out.println("sum(int,int,int)호출!");
-		return x+y+z;
-		}
-	int sum(String str1,int x,int y) {
-		System.out.println("sum(String,int,int)호출!");
-		name=str1;
-		return x+y;
-	}	
-}
 
+class C06Simple{
+	
+	int sum(int x , int y) {
+		System.out.println("int sum(int x , int y)");
+		return x + y;
+	}
+	int sum(int x , int y,int z) {
+		System.out.println("int sum(int x , int y,int z)");
+		return x + y + z;
+	}
+	int sum(double x , double y,double z) {
+		System.out.println("int sum(double x , double y,double z)");
+		return (int)(x + y + z);
+	}
+	//반환자료형은 오버로딩의 고려 대상이 아니다!
+	//함수를 찾아낼때 함수명과 매개변수의 형태로 구별을 한다
+//	double sum(double x , double y,double z) {
+//		System.out.println("int sum(double x , double y,double z)");
+//		return x + y + z;
+//	}
+}
 public class C06MethodOverloading {
 
 	public static void main(String[] args) {
 		C06Simple obj = new C06Simple();
-		int r1 = obj.sum(10, 20);
-		System.out.println("r1 : " + r1);
-		int r2 = obj.sum(10.2, 20.5);
-		System.out.println("r2 : " + r2);
-		int r3 = obj.sum(10,20,30);
-		System.out.println("r3 : " + r3);
-		int r4 = obj.sum("홍길동",20,30);
-		System.out.println("r3 : " + r3);
-		System.out.println(obj.name);
+		obj.sum(10, 20);
+		obj.sum(10, 20,30);
+		obj.sum(10.5, 20.5,30.5);
+		C06Simple obj2 = new C06Simple();
 	}
 
 }

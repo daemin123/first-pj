@@ -1,42 +1,47 @@
 package Ch08;
 
-import java.util.Scanner;
 
-class C03Person {
-	//속성(멤버변수)
+
+class C03Person{
+	//속성
 	String name;
 	int age;
-	float height;	//신장
-	double weight;	//몸무게
-	//기능(멤버함수,멤버메서드)
+	float height;
+	double weight;
+	//기능
 	//말하다
-	void talk()
-	{
-		System.out.println(name + " 님이 말합니다");
+	void talk() {
+		System.out.println(this.name + " 이 말합니다.");
 	}
 	//걷다
 	void walk() {
-		System.out.println(name + " 님이 걷습니다");
+		System.out.println(this.name + " 이 걷습니다.");
 	}
-	//속성정보확인
+	//정보확인
 	void showInfo() {
-		System.out.printf("%s %d %f %f\n", name,age,height,weight);
+		System.out.printf("%s %d %f %f\n",name,age,height,weight);
 	}
+	//정보확인
+	@Override
+	public String toString() {
+		return "C03Person [name=" + name + ", age=" + age + ", height=" + height + ", weight=" + weight + "]";
+	}
+	
 }
 
 public class C03PersonMain {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
 		C03Person hong = new C03Person();
-		hong.name=sc.next();
-		hong.age = sc.nextInt();
-		hong.height=sc.nextFloat();
-		hong.weight=sc.nextDouble();
-		System.out.printf("%s %d %f %f\n", hong.name,hong.age,hong.height,hong.weight);
+		hong.name ="홍길동";
+		hong.age = 55;
+		hong.height = 177.5f;
+		hong.weight=70.4;
 		hong.talk();
 		hong.walk();
 		hong.showInfo();
+		System.out.println("-----------------");
+		System.out.println(hong);
 		
 
 	}
