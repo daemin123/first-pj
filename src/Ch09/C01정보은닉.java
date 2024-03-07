@@ -28,6 +28,7 @@ package Ch09;
 //주민번호	// 비공개  //수정여부 x
 //...
 
+
 class C01Person{
 	private String name;
 	private int age;
@@ -63,8 +64,6 @@ class C01Person{
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
-
-	
 	
 //	@Override
 //	public String toString() {
