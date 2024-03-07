@@ -15,7 +15,7 @@ class Profile{
 	//기능
 	//1) getter and setter 삽입
 	//2) toString  재정의 
-	//3) boolean isContain(String compare) 함수 완성하기
+	//3) boolean isContain(String findstr) 함수 완성하기
 	boolean isContain(String findstr) {
 		//findstr의 문자열이 각멤버인 name,addr,job,major 중 하나라도 포함되어 있으면 true 리턴
 		//아니면 false 리턴
