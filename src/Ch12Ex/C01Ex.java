@@ -17,4 +17,6 @@ public class C01Ex {
 		   ColorTV myTV = new ColorTV(32, 1024);
 		   myTV.printProperty(); // 32인치 1024컬러 가 나오면 해결!
 	}
+	
 }
+
