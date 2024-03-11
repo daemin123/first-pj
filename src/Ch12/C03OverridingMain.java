@@ -6,25 +6,25 @@ package Ch12;
 //상위클래스로 부터 물려받더라도 각 하위클래스마다 다양한 형태의 결과물을 만들어낼수 있다
 
 
+
 class Animal{
 	void sound() {System.out.println("소리낸다");}
 }
 
-class Dog extends Animal{
-
+class Dog extends Animal
+{
 	@Override
 	void sound() {	
 		System.out.println("멍멍 소리낸다");
 	}
-	
 }
+
 class Cat extends Animal{
 
 	@Override
 	void sound() {
 		System.out.println("야옹 소리낸다");
 	}
-	
 }
 
 public class C03OverridingMain {
