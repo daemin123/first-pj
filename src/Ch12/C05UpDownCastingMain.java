@@ -108,6 +108,18 @@ public class C05UpDownCastingMain {
 		}else if(obj instanceof C) {
 			C down = (C)obj;
 			down.c=args[1];
+		}else if(obj instanceof D) {
+			D down = (D)obj;
+			down.d=args[1];			
+		}else if(obj instanceof E) {
+			E down = (E)obj;
+			down.e=args[1];		
+		}else if(obj instanceof F) {
+			F down = (F)obj;
+			down.f=args[1];		
+		}else if(obj instanceof G) {
+			G down = (G)obj;
+			down.g=args[1];		
 		}
 		
 		System.out.println(obj);
@@ -115,13 +127,13 @@ public class C05UpDownCastingMain {
 	
 	public static void main(String[] args) {
 		
-		A ob1 = new A(10);
-		B ob2 = new B(11,12);
-		C ob3 = new C(13,14);
-		D ob4 = new D(15,16,17);
-		E ob5 = new E(18,19,20);
-		F ob6 = new F(21,22,23);
-		G ob7 = new G(24,25,26);
+		A ob1 = new A(0);
+		B ob2 = new B(0,0);
+		C ob3 = new C(0,0);
+		D ob4 = new D(0,0,0);
+		E ob5 = new E(0,0,0);
+		F ob6 = new F(0,0,0);
+		G ob7 = new G(0,0,0);
 		
 		UpDownTestFunc(ob1,15); // A obj = ob1 //NoCasting
 		UpDownTestFunc(ob2,99,98); // A obj = ob2 //UpCasting
