@@ -68,13 +68,13 @@ public class C03Ex {
 
 	public void showInfo() {
 		//Employee 의 하위클래스형 객체들을 받을수있도록 Upcasting
-		
 		//하위클래스형(Regular,Parttimer)로 다운캐스팅후 정보확인(System.out.println)
 	}
 	
 	public static void main(String[] args) {
 		Parttimer emp1 = new Parttimer("홍길동",25,"대구",20000);
 		Regular emp2 = new Regular("서길동",45,"울산",50000000);
-		
+		showInfo(emp1);
+		showInfo(emp2);
 	}
 }
