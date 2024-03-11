@@ -126,10 +126,10 @@ public class C05UpDownCastingMain {
 		UpDownTestFunc(ob1,15); // A obj = ob1 //NoCasting
 		UpDownTestFunc(ob2,99,98); // A obj = ob2 //UpCasting
 		UpDownTestFunc(ob3,77,66);
-//		UpDownTestFunc(ob4);
-//		UpDownTestFunc(ob5);
-//		UpDownTestFunc(ob6);
-//		UpDownTestFunc(ob7);
+		UpDownTestFunc(ob4,55,44,33);
+		UpDownTestFunc(ob5,11,22,33);
+		UpDownTestFunc(ob6,78,89,80);
+		UpDownTestFunc(ob7,11,22,33);
 	}
 	
 }
