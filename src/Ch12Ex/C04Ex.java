@@ -18,7 +18,7 @@ class Circle{
 
 public class C04Ex {
 
-	public void 전체넓이확인() {
+	public static void 전체넓이확인() {
 		
 	}
 	public static void main(String[] args) {
