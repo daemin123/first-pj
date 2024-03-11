@@ -105,21 +105,26 @@ public class C05UpDownCastingMain {
 		if(obj instanceof B) {
 			B down = (B)obj;	//downcasting
 			down.b=args[1];
-		}else if(obj instanceof C) {
+		} 
+		if(obj instanceof C) {
 			C down = (C)obj;
 			down.c=args[1];
-		}else if(obj instanceof D) {
+		} 
+		if(obj instanceof D) {
 			D down = (D)obj;
-			down.d=args[1];			
-		}else if(obj instanceof E) {
+			down.d=args[2];			
+		}
+		if(obj instanceof E) {
 			E down = (E)obj;
-			down.e=args[1];		
-		}else if(obj instanceof F) {
+			down.e=args[2];		
+		} 
+		if(obj instanceof F) {
 			F down = (F)obj;
-			down.f=args[1];		
-		}else if(obj instanceof G) {
+			down.f=args[2];		
+		} 
+		if(obj instanceof G) {
 			G down = (G)obj;
-			down.g=args[1];		
+			down.g=args[2];		
 		}
 		
 		System.out.println(obj);
