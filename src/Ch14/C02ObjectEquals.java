@@ -34,6 +34,8 @@ public class C02ObjectEquals {
 		String str2 = new String("JAVA");
 		str1.equals(str2);
 
+		str1.toString();
+		
 		
 	}
 	
