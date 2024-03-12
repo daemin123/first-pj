@@ -31,7 +31,7 @@ public class C01AbstractMain {
 //		Son1 ob2 = new Son1();		//하위클래스 객체 생성 o
 //		ob1.Func();					//상위클래스에서 하위클래스가 추가한 메서드 접근 x
 //									//상위클래스에서 정의한 메서드를 하위클래스에서 재정의한 경우 접근 o
-//		
+//		++
 //		Super1 ob3 = ob2;			//UPCASTING
 //		ob3.Func();
 		
