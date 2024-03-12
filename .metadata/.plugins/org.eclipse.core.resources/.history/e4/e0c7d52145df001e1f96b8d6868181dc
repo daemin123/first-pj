@@ -1,0 +1,39 @@
+package Ch12;
+
+class Super {
+	int n1;
+}
+
+class Sub extends Super {
+	int n2;
+}
+
+public class C04UpDownCastingMain {
+	public static void main(String[] args) {
+		
+		// NoCasting
+		Super ob1 = new Super();
+		ob1.n1 = 10;
+		Sub ob2 = new Sub();
+		ob2.n1 = 10;
+		ob2.n2 = 20;
+		
+		// UpCasting : 상위 클래스 참조 변수 = 하위 클래스 객체
+		// UpCasting은 상위 클래스형으로 형변환을 하는 문법
+		// UpCasting은 자동 형변환이 된다.
+		Super ob3 = new Sub(); // 상위 클래스의 참조 변수로 하위 객체 연결
+		ob3.n1 = 100;
+		// ob3.n2 = 20; Super 상위 클래스로 UpCasting이 진행 되었기에
+		// 				n1은 공간 설정이 되어 있다. 하지만 n2를 넣을 공간도 설정이 되어 있지만,
+		// 			 	n2가 정의 X
+		
+		
+		// DownCasting
+		Sub ob4 = (Sub) ob3;
+		ob4.n1=100;
+		ob4.n2=200;
+		System.out.println(ob4.n2);
+		
+		
+	}
+}

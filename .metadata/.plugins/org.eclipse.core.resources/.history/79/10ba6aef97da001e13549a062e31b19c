@@ -1,0 +1,22 @@
+package Ch08;
+import java.io.*;
+import java.util.Scanner;
+
+class key {
+	String sentence;
+	void change() {
+		
+	}
+}
+public class prac2 {
+	public static void main(String[] args) {
+		key key = new key();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("입력하세요");
+		key.sentence = sc.nextLine();
+		StringBuffer sen = new StringBuffer(key.sentence);
+		sen.reverse();
+		System.out.println(key.sentence);
+		
+	}
+}

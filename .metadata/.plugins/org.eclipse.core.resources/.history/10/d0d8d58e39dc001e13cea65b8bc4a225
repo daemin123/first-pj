@@ -1,0 +1,14 @@
+package Ch10;
+
+class C04Person {
+	String name;
+	int age;	
+	
+}
+
+public class C04ClassArrayMain {
+	
+	public static void main(String[] args) {
+		
+	}
+}

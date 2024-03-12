@@ -1,0 +1,13 @@
+package Ch12Ex;
+
+public class C03Ex {
+	public void showInfo() {
+		// Employee의 하위 클래스형 객체들을 받을 수 있도록 Upcasting
+		// 하위 클래스형(Regular, Parttimer)로 다운캐스팅 후 정보 확인(System.out.println)
+	}
+	
+	public static void main(String[] args) {
+		Parttimer emp1 = new Parttimer("홍길동",25,"대구",20000);
+		Regular emp2 = new Regular("서길동",45,"울산",50000000);
+	}
+}

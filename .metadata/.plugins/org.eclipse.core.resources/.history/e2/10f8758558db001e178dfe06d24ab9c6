@@ -1,0 +1,19 @@
+package Ch08;
+
+// 멤버 변수
+
+// 지역 변수
+// 전역 변수
+
+class C05Simple {
+	void Func1() {}
+	void Func2() {}
+	void Func3() {}
+	void Func4() {}
+}
+
+public class C05 {
+	public static void main(String[] args) {
+		
+	}
+}

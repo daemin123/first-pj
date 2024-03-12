@@ -1,0 +1,15 @@
+package Ch14;
+
+
+class C02Simple {
+	int n;
+	C02Simple(int n) {
+		this.n=n;
+	}
+}
+public class C02ObjectEquals {
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,41 @@
+package Ch08Ex;
+
+class Printer {
+	int a;
+	double b;
+	boolean c;
+	String d;
+	Printer(int a) {
+		this.a = a;
+	}
+	Printer(double b) {
+		this.b = b;
+	}
+	Printer(boolean c) {
+		this.c = c;
+	}
+	Printer(String d) {
+		this.d = d;
+	}
+	void println(int a) {
+		System.out.println(a);
+	}
+	void println(double b) {
+		System.out.println(b);
+	}
+	void println(boolean c) {
+		System.out.println(c);
+	}
+	void println(String d) {
+		System.out.println(d);
+	}
+}
+public class C02Prac {
+	public static void main(String[] args) {
+		Printer printer = new Printer();
+		printer.println(10);
+		printer.println(true);
+		printer.println(5.7);
+		printer.println("홍길동");
+	}
+}

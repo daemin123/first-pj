@@ -1,0 +1,16 @@
+package Ch08;
+
+class C09Simple {
+	int num;
+//	C09Simple(int num) {
+//		
+//	}
+}
+
+public class C09ConstructorMain {
+	
+	public static void main(String[] args) {
+		C09Simple ob = new C09Simple();
+		System.out.println(ob.num);
+	}
+}

@@ -1,0 +1,25 @@
+package Ch08;
+
+// 멤버 변수
+
+// 지역 변수
+// 전역 변수
+
+class Simple {
+	int num = 5;	// 멤버 변수
+	void Func1() {
+		System.out.println("멤버변수 num : " + num);
+		int num = 10;
+		System.out.println("Func1 지역변수 num : " + num);
+		System.out.println("this.num : " + num);
+	}
+	void Func2() {}
+	void Func3() {}
+	void Func4() {}
+}
+public class C05LocalVarMain {
+	public static void main(String[] args) {
+		Simple obj = new Simple();
+		obj.Func1();
+	}
+}

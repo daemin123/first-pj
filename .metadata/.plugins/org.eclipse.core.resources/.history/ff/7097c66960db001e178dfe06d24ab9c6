@@ -1,0 +1,14 @@
+package Ch08;
+
+class Simple07 {
+	int sum(int ... arg) {
+		System.out.println(arg);
+		return 0;
+	}
+}
+public class C07Method가변인자 {
+	public static void main(String[] args) {
+		Simple07 obj = new Simple07();
+		obj.sum(10);
+	}
+}

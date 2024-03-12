@@ -1,0 +1,11 @@
+package Ch10;
+
+public class C05MainParam {
+	
+	
+	public static void main(String[] args) {
+		int x;
+		int y;
+		System.out.println("파라미터 개수 : " + args.length);	
+	}
+}

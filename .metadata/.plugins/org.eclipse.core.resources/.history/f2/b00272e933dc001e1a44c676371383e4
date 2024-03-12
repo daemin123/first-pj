@@ -1,0 +1,18 @@
+package Ch10;
+
+import java.util.Arrays;
+
+public class C02ArrayMain {
+	public static void main(String[] args) {
+		
+		// 얕은 복사
+		int arr1[] = {10,20,30};
+		int arr2[];
+		arr2 = arr1;
+		Arrays.stream(arr1).forEach(item->System.out.print(item));
+		System.out.println();
+		Arrays.stream(arr2).forEach(item->System.out.print(item));
+		
+		// 깊은 복사
+	}
+}

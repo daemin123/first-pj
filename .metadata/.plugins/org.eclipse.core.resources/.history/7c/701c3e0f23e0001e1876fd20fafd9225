@@ -1,0 +1,19 @@
+package Ch14;
+
+class A {
+	
+}
+
+public class C01ObjectMain {
+	
+	
+	public static void main(String[] args) {
+		
+		Object ob = new Object();
+		System.out.println(ob);
+		A ob2 = new A();
+		System.out.println(ob2);
+		
+	}
+	
+}

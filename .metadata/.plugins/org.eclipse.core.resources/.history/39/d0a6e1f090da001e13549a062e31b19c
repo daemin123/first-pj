@@ -1,0 +1,84 @@
+package Ch99;
+// 홍길동 gs감삼점 햄버거 1개
+// 영희 gs동성로점 불닭볶음면 3개
+// 철수 gs감삼점 햄버거 52개
+class store {
+    private int hbgcnt;
+    public int hbgprice;
+    private int 불닭;
+    public int 불닭price;
+    private int 매출;
+
+    store(int hbgcnt, int hbgprice, int 불닭, int 불닭price, int 매출){
+        this.hbgcnt = hbgcnt;
+        this.hbgprice = hbgprice;
+        this.불닭 = 불닭;
+        this.불닭price = 불닭price;
+        this.매출 = 매출;
+    }
+
+    public int receive(int 불닭1, int hbgcnt1, int money) {
+        불닭 -= 불닭1;
+        hbgcnt -= hbgcnt1;
+        int a = 불닭1 * 불닭price + hbgcnt1 * hbgprice;
+        매출 += a;
+        return a;
+    }
+
+    void showinfo() {
+        System.out.println("햄버거 수량: " + this.hbgcnt + ", 햄버거 가격: " + this.hbgprice + ", 불닭 수량: " + this.불닭 + ", 불닭 가격: " + this.불닭price + ", 총 매출: " + this.매출);
+    }
+}
+
+class buyer {
+    String name;
+    private int money;
+    private int 불닭;
+    private int hbgcnt;
+
+    buyer(String name, int money, int 불닭, int hbgcnt){
+        this.name = name;
+        this.money = money;
+        this.불닭 = 불닭;
+        this.hbgcnt = hbgcnt;
+    }
+
+    void buy(store store, int 불닭, int hbgcnt) {
+        int requiredMoney = 불닭 * store.불닭price + hbgcnt * store.hbgprice;
+        if (requiredMoney <= this.money) {
+            int pay = store.receive(
+            		불닭, hbgcnt, requiredMoney);
+            this.money -= pay;
+            this.불닭 += 불닭;
+            this.hbgcnt += hbgcnt;
+        } else {
+            System.out.println("돈이 부족합니다.");
+        }
+    }
+
+    void showinfo() {
+        System.out.println("이름: " + this.name + ", 보유 금액: " + this.money + ", 불닭 수량: " + this.불닭 + ", 햄버거 수량: " + this.hbgcnt);
+    }
+}
+
+public class testprac {
+    public static void main(String[] args) {
+        store gamsam = new store(500, 3000, 4, 1200, 0);
+        store dongsung = new store(6, 2800, 7, 1100, 0);
+
+        buyer dong = new buyer("홍길동", 120000, 0, 0);
+        buyer su = new buyer("철수", 2000000, 0, 0);
+        buyer hee = new buyer("영희", 40000, 0, 0);
+        dong.buy(gamsam, 0, 1);
+        su.buy(gamsam, 0, 52);
+        hee.buy(dongsung, 3, 0);
+
+        dong.showinfo();
+        su.showinfo();
+        hee.showinfo();
+
+        gamsam.showinfo();
+        dongsung.showinfo();
+    }
+}
+

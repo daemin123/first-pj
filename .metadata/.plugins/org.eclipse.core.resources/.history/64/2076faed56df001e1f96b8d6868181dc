@@ -1,0 +1,21 @@
+package Ch13;
+
+abstract class A {
+	abstract void func1();
+	abstract void func2();
+}
+class B extends A {
+	void func1() {
+		System.out.println("hi");
+	}
+	void func2() {
+		System.out.println("hello");
+	}
+}
+public class C01AbstractMain {
+	public static void main(String[] args) {
+		B b = new B();
+		b.func1();
+		b.func2();
+	}
+}

@@ -1,0 +1,30 @@
+package Ch11;
+
+
+class Company {
+	
+	// 싱글톤 패턴 코드
+	// 객체를 여러개 생성하는 것을 방지하는 패턴
+	
+	private static Company instance;
+	private Company() {
+		
+	}
+	public static Company getInstance() {
+		if(instance==null) {
+			instance = new Company(); // Company instance --> 생성되지 않았다면 생성
+			System.out.println("D");
+		}
+		else {
+			System.out.println("B");
+			return instance; // 생성되었다면 그대로 반환하고 진행
+		}
+	}
+}
+
+public class C03SingleTonPatternMain {
+	public static void main(String[] args) {
+		Company com1 = Company.getInstance();
+		Company com2 = Company.getInstance();
+	}
+}

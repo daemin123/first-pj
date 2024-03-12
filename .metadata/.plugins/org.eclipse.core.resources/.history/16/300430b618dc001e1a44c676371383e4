@@ -1,0 +1,9 @@
+package Ch09;
+
+import Ch08.C01Main;
+
+public class C03캡슐화 {
+	public static void main(String[] args) {
+		
+	}
+}

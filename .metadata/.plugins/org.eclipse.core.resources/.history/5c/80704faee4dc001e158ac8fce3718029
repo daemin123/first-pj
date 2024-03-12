@@ -1,0 +1,21 @@
+package Ch11;
+
+class C02Simple {
+	int n1;
+	int n2;
+	
+	void func1() {
+		System.out.println(n1+n2);
+	}
+	void func2() {
+		System.out.println(n1-n2);
+	}
+}
+public class C02StaticMain {
+	public static void main(String[] args) {
+		C02Simple ob = new C02Simple();
+		ob.n1 = 5; ob.n2 = 3;
+		ob.func1();
+		ob.func2();
+	}
+}

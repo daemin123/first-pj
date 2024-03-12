@@ -1,0 +1,14 @@
+package Ch08;
+
+class C06Simple {
+	int sum(int x, int y) {
+		return x + y;
+	}
+}
+
+public class C06MethodOverloading {
+	public static void main(String[] args) {
+		C06Simple obj = new C06Simple();
+		System.out.println(obj.sum(5, 4));
+	}
+}

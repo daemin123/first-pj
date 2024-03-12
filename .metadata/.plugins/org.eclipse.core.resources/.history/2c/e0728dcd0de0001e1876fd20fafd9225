@@ -1,0 +1,59 @@
+package Ch13;
+
+interface Remocon {
+	int MAXVOL=100;
+	int MINVOL=0;
+	void on();
+	void off();
+}
+
+class TV implements Remocon {
+
+	@Override
+	public void on() {
+		// TODO Auto-generated method stub
+		System.out.println("TV를 켭니다");
+	}
+
+	@Override
+	public void off() {
+		// TODO Auto-generated method stub
+		System.out.println("TV를 끕니다.");
+	}
+	
+}
+
+class Radio implements Remocon {
+
+	@Override
+	public void on() {
+		// TODO Auto-generated method stub
+		System.out.println("Radio를 켭니다.");
+	}
+
+	@Override
+	public void off() {
+		// TODO Auto-generated method stub
+		System.out.println("Radio를 끕니다.");
+	}
+	
+}
+
+public class C02InterfaceMain {
+	
+	public static void TurnOn(Remocon remocon) { // 참조 변수를 Remocon Interface로 설정
+		remocon.on();
+	}
+	public static void TurnOff(Remocon remocon) { // 참조 변수를 Remocon Interface로 설정
+		remocon.off();
+	}
+	
+	public static void main(String[] args) {
+		TV tv1 = new TV();			// tv1 객체 생성
+		Radio radio1 = new Radio(); // radio1 객체 생성
+		TurnOn(tv1);
+		TurnOff(tv1);
+		TurnOn(radio1);
+		TurnOff(radio1);
+	}
+}

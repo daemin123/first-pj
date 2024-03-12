@@ -1,0 +1,17 @@
+package Ch12;
+
+class C06Super {
+	void func1() {System.out.println("C06Super Func1 호출!");}
+	}
+class C06Sub extends C06Super{
+	
+}
+public class C06UpDownCastingOverridingMain {
+	public static void main(String[] args) {
+		C06Super ob1 = new C06Super();
+		ob1.func1();
+		
+		C06Sub ob2 = new C06Sub();
+		ob2.func1();
+	}
+}

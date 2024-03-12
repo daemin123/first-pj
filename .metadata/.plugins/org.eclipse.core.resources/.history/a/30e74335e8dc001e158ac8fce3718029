@@ -1,0 +1,25 @@
+package Ch11;
+
+
+class Company {
+	
+	// 싱글톤 패턴 코드
+	// 객체를 여러개 생성하는 것을 방지하는 패턴
+	
+	private static Company instance;
+	private Company() {
+		
+	}
+	public static Company getInstance() {
+		if(instance==null)
+			instance = new Company();
+		return instance;
+	}
+}
+
+public class C03SingleTonPatternMain {
+	public static void main(String[] args) {
+		Company com1 = Company.getInstance();
+		Company com2 = Company.getInstance();
+	}
+}

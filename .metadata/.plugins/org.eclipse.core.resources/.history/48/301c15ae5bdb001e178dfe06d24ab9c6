@@ -1,0 +1,15 @@
+package Ch08;
+
+class C06Simple {
+	int sum(int x, int y) {
+		System.out.println("int sum(int x, int y)");
+		return x + y;
+	}
+}
+
+public class C06MethodOverloading {
+	public static void main(String[] args) {
+		C06Simple obj = new C06Simple();
+		obj.sum(10,20);
+	}
+}

@@ -1,0 +1,18 @@
+package Ch14;
+
+
+class C02Simple {
+	int n;
+	C02Simple(int n) {
+		this.n=n;
+	}
+}
+public class C02ObjectEquals {
+	
+	public static void main(String[] args) {
+		C02Simple ob1 = new C02Simple(10);
+		C02Simple ob2 = new C02Simple(10);
+		C02Simple ob3 = new C02Simple(20);
+		
+	}
+}
