@@ -28,8 +28,6 @@ public class C05ThrowAndThrowsMain {
 			
 		b.Ex2(a);
 		
-		
-		
 		System.out.println("실행코드3");
 		
 	}
