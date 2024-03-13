@@ -19,7 +19,6 @@ class C02Simple{
 		
 	}
 }
-
 public class C02ObjectEquals {
 
 	public static void main(String[] args) {
