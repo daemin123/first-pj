@@ -7,12 +7,12 @@ import java.util.Map;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import Ch36Prac.Domain.Dao.SessionDao;
-import Ch36Prac.Domain.Dao.SessionDaoImpl;
 import Ch36Prac.Domain.Dao.MemberDao;
 import Ch36Prac.Domain.Dao.MemberDaoImpl;
-import Ch36Prac.Domain.Dto.SessionDto;
+import Ch36Prac.Domain.Dao.SessionDao;
+import Ch36Prac.Domain.Dao.SessionDaoImpl;
 import Ch36Prac.Domain.Dto.MemberDto;
+import Ch36Prac.Domain.Dto.SessionDto;
 
 public class MemberServiceImpl implements MemberService {
 	
@@ -80,7 +80,7 @@ public class MemberServiceImpl implements MemberService {
 		}
 		
 		//2 로그인 상태가 아니라면 user테이블로부터 동일한 이름의 user정보를 가져오기(getUser())
-		MemberDto savedUser =  getId(id);
+		MemberDto savedUser =  getUsername(username);
 		if(savedUser==null) {
 			result.put("response", false);
 			result.put("msg", "동일 계정이 존재하지 않습니다.");
@@ -160,6 +160,7 @@ public class MemberServiceImpl implements MemberService {
 	public List<Integer> getSessionIdList(){
 		return SessionIdList;
 	}
+	
 	
 	
 }

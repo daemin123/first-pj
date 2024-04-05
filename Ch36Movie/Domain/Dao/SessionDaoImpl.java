@@ -1,15 +1,11 @@
 package Ch36Prac.Domain.Dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
 import Ch36Prac.Domain.Dto.SessionDto;
 
-public class SessionDaoImpl extends CommonDao implements SessionDao{
+public class SessionDaoImpl extends CommonDao implements  SessionDao{
 	
 	
 	private static SessionDao instance;
@@ -60,7 +56,7 @@ public class SessionDaoImpl extends CommonDao implements SessionDao{
 		if(rs!=null) {
 			rs.next();
 			dto=new SessionDto();
-			dto.setUsername(rs.getString("id"));
+			dto.setId(rs.getString("id"));
 			dto.setRole(rs.getString("role"));
 			dto.setSessionId(rs.getInt("sessionId"));
 		}
@@ -70,7 +66,7 @@ public class SessionDaoImpl extends CommonDao implements SessionDao{
 
 	@Override
 	public boolean Delete(int sessionId) throws Exception {
-		pstmt = conn.prepareStatement("delete from session where id=?");
+		pstmt = conn.prepareStatement("delete from session where sessionId=?");
 		pstmt.setInt(1, sessionId);
 		int result = pstmt.executeUpdate();
 		freeConnection(pstmt);
@@ -86,7 +82,7 @@ public class SessionDaoImpl extends CommonDao implements SessionDao{
 		if(rs!= null) {
 			while (rs.next()) {
 				dto = new SessionDto();
-				dto.setUsername(rs.getString("id"));
+				dto.setId(rs.getString("id"));
 				dto.setSessionId(rs.getInt("sessionId"));
 				dto.setRole(rs.getString("role"));
 				list.add(dto);

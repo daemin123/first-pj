@@ -8,10 +8,12 @@ import java.sql.ResultSet;
 import Ch36.Domain.Dao.UserDao;
 import Ch36.Domain.Dao.UserDaoImpl;
 import Ch36Prac.Domain.Dto.MemberDto;
+import Ch36Prac.Domain.Service.MemberService;
+import Ch36Prac.Domain.Service.MemberServiceImpl;
 
 
 
-public class MemberDaoImpl {
+public class MemberDaoImpl implements MemberDao {
 	
 	private String url ="jdbc:mysql://localhost:3306/moviedb";
 	private String id = "root";
@@ -20,6 +22,14 @@ public class MemberDaoImpl {
 	private Connection conn =null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
+	
+	private static MemberDao instance;
+	public static MemberDao getInstance() throws Exception {
+		if(instance==null)
+			instance= new MemberDaoImpl();
+		return instance;
+	}
+	
 
 
 	
@@ -30,6 +40,7 @@ public class MemberDaoImpl {
 	}
 	
 	//INSERT
+	@Override
 	public boolean Insert(MemberDto dto) throws Exception{
 		pstmt =  conn.prepareStatement("insert into Member values(?,?,?,?,?,?)");
 		pstmt.setString(1, dto.getId());
@@ -50,6 +61,7 @@ public class MemberDaoImpl {
 	
 	
 
+	@Override
 	public MemberDto Select(String id) throws Exception{
 		pstmt = conn.prepareStatement("select * from Member where id=?");
 		pstmt.setString(1, id);
@@ -70,6 +82,8 @@ public class MemberDaoImpl {
 		}
 		return dto;	
 	}
+
+
 
 	
 }
