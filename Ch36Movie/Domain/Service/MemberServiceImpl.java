@@ -80,7 +80,7 @@ public class MemberServiceImpl implements MemberService {
 		}
 		
 		//2 로그인 상태가 아니라면 user테이블로부터 동일한 이름의 user정보를 가져오기(getUser())
-		MemberDto savedUser =  getUsername(username);
+		MemberDto savedUser =  getUser(username);
 		if(savedUser==null) {
 			result.put("response", false);
 			result.put("msg", "동일 계정이 존재하지 않습니다.");
@@ -150,8 +150,8 @@ public class MemberServiceImpl implements MemberService {
 	
 	//유저정보 가져오기
 	@Override
-	public MemberDto getId(String id) throws Exception {
-		return memberDao.Select(id);
+	public MemberDto getUser(String username) throws Exception {
+		return memberDao.Select(username);
 	}
 	
 	

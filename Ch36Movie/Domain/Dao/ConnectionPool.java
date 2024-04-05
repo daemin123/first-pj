@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 public class ConnectionPool {
 	
 	protected String url = "jdbc:mysql://localhost:3306/moviedb";
+	
 	protected String id = "root";
 	protected String pw = "1234";
 	
