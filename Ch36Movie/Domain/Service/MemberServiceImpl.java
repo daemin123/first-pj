@@ -65,7 +65,7 @@ public class MemberServiceImpl implements MemberService {
 	//로그인
 	
 	@Override
-	public Map<String,Object> login(String username,String password,int SessiondId) throws Exception {
+	public Map<String,Object> login(String membername,String password,int SessiondId) throws Exception {
 		
 		Map<String,Object> result=new HashMap();
 		
@@ -80,7 +80,7 @@ public class MemberServiceImpl implements MemberService {
 		}
 		
 		//2 로그인 상태가 아니라면 user테이블로부터 동일한 이름의 user정보를 가져오기(getUser())
-		MemberDto savedUser =  getUser(username);
+		MemberDto savedUser =  getUser(membername);
 		if(savedUser==null) {
 			result.put("response", false);
 			result.put("msg", "동일 계정이 존재하지 않습니다.");
@@ -96,7 +96,7 @@ public class MemberServiceImpl implements MemberService {
 		
 		//4 PW일치한다면 session테이블에 세션정보 저장
 		SessionDto sessionDto = new SessionDto();
-		sessionDto.setId(savedUser.getId());
+		sessionDto.setMembername(savedUser.getMembername());
 		sessionDto.setRole(savedUser.getRole());
 		boolean isSessionSaved =  sessionDao.Insert(sessionDto);
 		if(!isSessionSaved) {
@@ -107,7 +107,7 @@ public class MemberServiceImpl implements MemberService {
 		
 		
 		//5 PW일치한다면 sessionList에 sessionId값 저장
-		Integer id =  sessionDao.Select(sessionDto.getId()).getSessionId();
+		Integer id =  sessionDao.Select(sessionDto.getMembername()).getSessionId();
 		result.put("response", true);
 		result.put("msg", "로그인 성공!");
 		result.put("sessionId", id);
@@ -150,8 +150,8 @@ public class MemberServiceImpl implements MemberService {
 	
 	//유저정보 가져오기
 	@Override
-	public MemberDto getUser(String username) throws Exception {
-		return memberDao.Select(username);
+	public MemberDto getUser(String membername) throws Exception {
+		return memberDao.Select(membername);
 	}
 	
 	
@@ -160,6 +160,11 @@ public class MemberServiceImpl implements MemberService {
 	public List<Integer> getSessionIdList(){
 		return SessionIdList;
 	}
+
+	
+
+	
+
 	
 	
 	

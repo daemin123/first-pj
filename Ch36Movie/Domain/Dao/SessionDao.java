@@ -10,7 +10,7 @@ public interface SessionDao {
 
 	SessionDto Select(int sessiondId) throws Exception;
 
-	SessionDto Select(String username) throws Exception;
+	SessionDto Select(String membername) throws Exception;
 
 	boolean Delete(int sessionId) throws Exception;
 
