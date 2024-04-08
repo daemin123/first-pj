@@ -10,7 +10,7 @@ public interface MemberService {
 	//회원가입
 	boolean MemberJoin(MemberDto dto) throws Exception;
 
-	Map<String, Object> login(String membername, String password, int SessiondId) throws Exception;
+	Map<String, Object> login(String id, String password, int SessiondId) throws Exception;
 
 	//로그아웃
 	Map<String, Object> logout(int SessionId) throws Exception;
@@ -21,6 +21,6 @@ public interface MemberService {
 	List<Integer> getSessionIdList();
 
 	//유저정보 가져오기
-	MemberDto getUser(String membername) throws Exception;
+	MemberDto getUser(String id) throws Exception;
 
 }

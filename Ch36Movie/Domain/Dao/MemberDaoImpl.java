@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import Ch36.Domain.Dao.UserDao;
-import Ch36.Domain.Dao.UserDaoImpl;
+import Ch36Prac.Domain.Dao.MemberDao;
+import Ch36Prac.Domain.Dao.MemberDaoImpl;
 import Ch36Prac.Domain.Dto.MemberDto;
 import Ch36Prac.Domain.Service.MemberService;
 import Ch36Prac.Domain.Service.MemberServiceImpl;
@@ -42,13 +42,14 @@ public class MemberDaoImpl implements MemberDao {
 	//INSERT
 	@Override
 	public boolean Insert(MemberDto dto) throws Exception{
-		pstmt =  conn.prepareStatement("insert into Member values(?,?,?,?,?,?)");
+		pstmt =  conn.prepareStatement("insert into member values(?,?,?,?,?,?,?)");
 		pstmt.setString(1, dto.getId());
 		pstmt.setString(2, dto.getPw());
 		pstmt.setString(3, dto.getMembername());
 		pstmt.setString(4, dto.getAddress());
 		pstmt.setString(5, dto.getPhone_number());
 		pstmt.setInt(6, dto.get포인트_보유량());
+		pstmt.setString(7, dto.getRole());
 		
 		
 		return pstmt.executeUpdate()>0;
@@ -63,7 +64,7 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public MemberDto Select(String id) throws Exception{
-		pstmt = conn.prepareStatement("select * from Member where id=?");
+		pstmt = conn.prepareStatement("select * from member where id=?");
 		pstmt.setString(1, id);
 		rs = pstmt.executeQuery();
 		MemberDto dto = null;
@@ -73,7 +74,7 @@ public class MemberDaoImpl implements MemberDao {
 				dto = new MemberDto();
 				dto.setId(id);
 				dto.setPw(rs.getString("pw"));
-				dto.setMembername(rs.getString("Membername"));
+				dto.setMembername(rs.getString("membername"));
 				dto.setAddress(rs.getString("address"));
 				dto.setPhone_number(rs.getString("phone_number"));
 				dto.set포인트_보유량(rs.getInt("포인트_보유량"));

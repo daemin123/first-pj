@@ -2,14 +2,14 @@ package Ch36Prac.Domain.Dto;
 
 public class SessionDto {
 	private int sessionId;
-	private String membername;
+	private String id;
 	private String role;
 	//toString
 	//getter and setter
 	//생성자(디폴트,모든인자)
 	@Override
 	public String toString() {
-		return "SessionDto [sessionId=" + sessionId + ", membername=" + membername + ", role=" + role + "]";
+		return "SessionDto [sessionId=" + sessionId + ", id=" + id + ", role=" + role + "]";
 	}
 	public int getSessionId() {
 		return sessionId;
@@ -17,11 +17,11 @@ public class SessionDto {
 	public void setSessionId(int sessionId) {
 		this.sessionId = sessionId;
 	}
-	public String getMembername() {
-		return membername;
+	public String getId() {
+		return id;
 	}
-	public void setMembername(String membername) {
-		this.membername = membername;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getRole() {
 		return role;
@@ -32,7 +32,7 @@ public class SessionDto {
 	public SessionDto(int sessionId, String id, String role) {
 		super();
 		this.sessionId = sessionId;
-		this.membername = membername;
+		this.id = id;
 		this.role = role;
 	}
 	public SessionDto() {}

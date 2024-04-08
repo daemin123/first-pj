@@ -24,7 +24,7 @@ public class SessionDaoImpl extends CommonDao implements  SessionDao{
 	@Override
 	public boolean Insert(SessionDto sessionDto) throws Exception {
 		pstmt =  conn.prepareStatement("insert into session values(null,?,?)");
-		pstmt.setString(1, sessionDto.getMembername());
+		pstmt.setString(1, sessionDto.getId());
 		pstmt.setString(2, sessionDto.getRole());
 		int result = pstmt.executeUpdate();
 		freeConnection(pstmt);
@@ -40,7 +40,7 @@ public class SessionDaoImpl extends CommonDao implements  SessionDao{
 		if(rs!=null) {
 			rs.next();
 			dto=new SessionDto();
-			dto.setMembername(rs.getString("membername"));
+			dto.setId(rs.getString("id"));
 			dto.setRole(rs.getString("role"));
 			dto.setSessionId(rs.getInt("sessionId"));
 		}
@@ -48,15 +48,15 @@ public class SessionDaoImpl extends CommonDao implements  SessionDao{
 		return dto;
 	}
 	@Override
-	public SessionDto Select(String membername) throws Exception {
-		pstmt = conn.prepareStatement("select * from session where membername=?");
-		pstmt.setString(1,membername);
+	public SessionDto Select(String id) throws Exception {
+		pstmt = conn.prepareStatement("select * from session where id=?");
+		pstmt.setString(1,id);
 		rs=pstmt.executeQuery();
 		SessionDto dto=null;
 		if(rs!=null) {
 			rs.next();
 			dto=new SessionDto();
-			dto.setMembername(rs.getString("membername"));
+			dto.setId(rs.getString("id"));
 			dto.setRole(rs.getString("role"));
 			dto.setSessionId(rs.getInt("sessionId"));
 		}
@@ -82,7 +82,7 @@ public class SessionDaoImpl extends CommonDao implements  SessionDao{
 		if(rs!= null) {
 			while (rs.next()) {
 				dto = new SessionDto();
-				dto.setMembername(rs.getString("membername"));
+				dto.setId(rs.getString("id"));
 				dto.setSessionId(rs.getInt("sessionId"));
 				dto.setRole(rs.getString("role"));
 				list.add(dto);

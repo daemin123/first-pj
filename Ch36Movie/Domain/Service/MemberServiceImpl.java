@@ -31,7 +31,7 @@ public class MemberServiceImpl implements MemberService {
 		return instance;
 	}
 	
-	private MemberServiceImpl() throws Exception {
+	public MemberServiceImpl() throws Exception {
 		System.out.println("MemberServiceImpl's MemberServiceImpl()");
 		bCryptPasswordEncoder = new BCryptPasswordEncoder();
 		
@@ -65,14 +65,14 @@ public class MemberServiceImpl implements MemberService {
 	//로그인
 	
 	@Override
-	public Map<String,Object> login(String membername,String password,int SessiondId) throws Exception {
+	public Map<String,Object> login(String id,String password,int SessiondId) throws Exception {
 		
 		Map<String,Object> result=new HashMap();
 		
 		
 		//1 SessionList에 동일한 세션정보가 있는지 확인
-		for(int id : SessionIdList) {
-			if(SessiondId==id) {
+		for(int id1 : SessionIdList) {
+			if(SessiondId==id1) {
 				result.put("response", false);
 				result.put("msg", "이미 해당 계정은 로그인한 상태입니다.");
 				return result;
@@ -80,7 +80,7 @@ public class MemberServiceImpl implements MemberService {
 		}
 		
 		//2 로그인 상태가 아니라면 user테이블로부터 동일한 이름의 user정보를 가져오기(getUser())
-		MemberDto savedUser =  getUser(membername);
+		MemberDto savedUser =  getUser(id);
 		if(savedUser==null) {
 			result.put("response", false);
 			result.put("msg", "동일 계정이 존재하지 않습니다.");
@@ -96,7 +96,7 @@ public class MemberServiceImpl implements MemberService {
 		
 		//4 PW일치한다면 session테이블에 세션정보 저장
 		SessionDto sessionDto = new SessionDto();
-		sessionDto.setMembername(savedUser.getMembername());
+		sessionDto.setId(savedUser.getId());
 		sessionDto.setRole(savedUser.getRole());
 		boolean isSessionSaved =  sessionDao.Insert(sessionDto);
 		if(!isSessionSaved) {
@@ -107,11 +107,11 @@ public class MemberServiceImpl implements MemberService {
 		
 		
 		//5 PW일치한다면 sessionList에 sessionId값 저장
-		Integer id =  sessionDao.Select(sessionDto.getMembername()).getSessionId();
+		Integer id1 =  sessionDao.Select(sessionDto.getId()).getSessionId();
 		result.put("response", true);
 		result.put("msg", "로그인 성공!");
-		result.put("sessionId", id);
-		SessionIdList.add(id);
+		result.put("sessionId", id1);
+		SessionIdList.add(id1);
 		return result;
 		
 	}
@@ -150,8 +150,8 @@ public class MemberServiceImpl implements MemberService {
 	
 	//유저정보 가져오기
 	@Override
-	public MemberDto getUser(String membername) throws Exception {
-		return memberDao.Select(membername);
+	public MemberDto getUser(String id) throws Exception {
+		return memberDao.Select(id);
 	}
 	
 	
