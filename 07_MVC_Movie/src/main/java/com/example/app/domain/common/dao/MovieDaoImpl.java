@@ -28,12 +28,12 @@ public class MovieDaoImpl extends CommonDao implements MovieDao {
 	@Override
 	public boolean Insert(MovieDto dto) throws Exception{
 		pstmt = conn.prepareStatement("insert into movie values(?,?,?,?,?,?)");
-		dto.setMovieId(rs.getInt("영화_ID"));
-		dto.setMovieTitle(rs.getString("영화제목"));
-		dto.setMoviegenre(rs.getString("영화장르"));
-		dto.setReserv(rs.getBoolean("영화예매여부"));
-		dto.setCgv(rs.getString("상영장소"));
-		dto.setTime(rs.getString("상영시간"));
+		pstmt.setInt(1,dto.getMovieId());
+		pstmt.setString(2,dto.getMovieTitle());
+		pstmt.setString(3,dto.getMoviegenre());
+		pstmt.setBoolean(4, dto.isReserv());
+		pstmt.setString(5,dto.getCgv());
+		pstmt.setString(6,dto.getTime());
 		int result = pstmt.executeUpdate();
 		
 		freeConnection(pstmt);

@@ -41,22 +41,22 @@
       	
             	<form action="${pageContext.request.contextPath}/movie/add" method="post" class="w-25 m-3">
             		<div>
-            			<input type="text" name="영화_ID" placeholder="영화_ID"  class="form-control m-3" />
+            			<input type="text" name="movieId" placeholder="영화_ID"  class="form-control m-3" />
             		</div>  		
             		<div>
-            			<input type="text" name="영화제목" placeholder="영화제목" class="form-control m-3" />
+            			<input type="text" name="movieTitle" placeholder="영화제목" class="form-control m-3" />
             		</div>
             		<div>
-            			<input type="text" name="영화장르" placeholder="영화장르" class="form-control m-3" />
+            			<input type="text" name="moviegenre" placeholder="영화장르" class="form-control m-3" />
             		</div>
              		<div>
-            			<input type="text" name="영화예매여부" placeholder="영화예매여부" class="form-control m-3" />
+            			<input type="text" name="reserv" placeholder="영화예매여부" class="form-control m-3" />
             		</div>
             		<div>
-            			<input type="text" name="상영장소" placeholder="상영장소" class="form-control m-3" />
+            			<input type="text" name="cgv" placeholder="상영장소" class="form-control m-3" />
             		</div>
             		<div>
-            			<input type="text" name="상영시간" placeholder="상영시간" class="form-control m-3" />
+            			<input type="text" name="time" placeholder="상영시간" class="form-control m-3" />
             		</div>           		
              		<div>
             			<button class="btn btn-secondary m-3">ADD</button>

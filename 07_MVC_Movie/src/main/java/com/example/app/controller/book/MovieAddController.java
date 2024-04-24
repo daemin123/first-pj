@@ -45,12 +45,12 @@ public class MovieAddController implements SubController{
 			
 			//POST 요청(etc Method)
 			//1
-			String movieId = request.getParameter("영화_ID");
-			String movieTitle = request.getParameter("영화제목");
-			String moviegenre = request.getParameter("영화장르");
-			String reserv = request.getParameter("영화예매여부");
-			String cgv = request.getParameter("상영장소");
-			String time = request.getParameter("상영시간");
+			String movieId = request.getParameter("movieId");
+			String movieTitle = request.getParameter("movieTitle");
+			String moviegenre = request.getParameter("moviegenre");
+			String reserv = request.getParameter("reserv");
+			String cgv = request.getParameter("cgv");
+			String time = request.getParameter("time");
 			
 			//2
 			if(!isValid(movieId,movieTitle,moviegenre,reserv,cgv,time)) {		
