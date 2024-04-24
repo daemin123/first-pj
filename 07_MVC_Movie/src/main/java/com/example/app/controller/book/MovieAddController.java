@@ -39,38 +39,38 @@ public class MovieAddController implements SubController{
 			//GET 요청
 			String method = request.getMethod();
 			if(method.contains("GET")) {
-				request.getRequestDispatcher("/WEB-INF/view/book/add.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/view/movie/add.jsp").forward(request, response);
 				return ;
 			}
 			
 			//POST 요청(etc Method)
 			//1
-			String 영화_ID = request.getParameter("영화_ID");
-			String 영화제목 = request.getParameter("영화제목");
-			String 영화장르 = request.getParameter("영화장르");
-			String 영화예매여부 = request.getParameter("영화예매여부");
-			String 상영장소 = request.getParameter("상영장소");
-			String 상영시간 = request.getParameter("상영시간");
+			String movieId = request.getParameter("영화_ID");
+			String movieTitle = request.getParameter("영화제목");
+			String moviegenre = request.getParameter("영화장르");
+			String reserv = request.getParameter("영화예매여부");
+			String cgv = request.getParameter("상영장소");
+			String time = request.getParameter("상영시간");
 			
 			//2
-			if(!isValid(영화_ID,영화제목,영화장르,영화예매여부,상영장소,상영시간)) {		
+			if(!isValid(movieId,movieTitle,moviegenre,reserv,cgv,time)) {		
 				
 				return ;
 			}
 			
 			//3
-			MovieDto movieDto = new MovieDto(Integer.parseInt(영화_ID),영화제목,영화장르,Boolean.parseBoolean(영화예매여부),상영장소,상영시간);
+			MovieDto movieDto = new MovieDto(Integer.parseInt(movieId),movieTitle,moviegenre,Boolean.parseBoolean(reserv),cgv,time);
 			
-			boolean isadded = MovieService.movieRegister(movieDto);
+			boolean isadded = movieService.movieRegister(movieDto);
 				
 			//4
 			if(isadded) {
 				
-				response.sendRedirect(request.getContextPath()+ "/book/list"); 
+				response.sendRedirect(request.getContextPath()+ "/movie/list"); 
 				
 			}else {
 				
-				request.getRequestDispatcher("/WEB-INF/view/book/add.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/view/movie/add.jsp").forward(request, response);
 				
 			}
 		
@@ -89,24 +89,24 @@ public class MovieAddController implements SubController{
 		
 	}
 
-	private boolean isValid(String 영화_ID, String 영화제목, String 영화장르, String 영화예매여부, String 상영장소, String 상영시간) {
-		if(영화_ID==null) {
+	private boolean isValid(String movieId, String movieTitle, String moviegenre, String reserv, String cgv, String time) {
+		if(movieId==null) {
 			return false;
 		}
-		if(영화_ID.isEmpty()) {
+		if(movieId.isEmpty()) {
 			return false;
 		}
-		if(영화제목==null || 영화제목.isEmpty())
+		if(movieTitle==null || movieTitle.isEmpty())
 			return false;
-		if(영화장르==null || 영화장르.isEmpty())
+		if(moviegenre==null || moviegenre.isEmpty())
 			return false;
-		if(영화예매여부==null || 영화예매여부.isEmpty())
+		if(reserv==null || reserv.isEmpty())
 			return false;
-		if(상영장소==null || 상영장소.isEmpty())
+		if(cgv==null || cgv.isEmpty())
 			return false;
-		if(상영시간==null || 상영시간.isEmpty())
+		if(time==null || time.isEmpty())
 			return false;
-		if(Boolean.parseBoolean(영화예매여부)!=true && Boolean.parseBoolean(영화예매여부)!= false)
+		if(Boolean.parseBoolean(reserv)!=true && Boolean.parseBoolean(reserv)!= false)
 			return false;
 		
 		return true;

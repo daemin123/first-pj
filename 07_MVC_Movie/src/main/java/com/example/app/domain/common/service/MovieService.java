@@ -12,7 +12,7 @@ public interface MovieService {
 
 	List<MovieDto> getAllMovies() throws Exception;
 
-	MovieDto getMovie(int 영화_ID) throws Exception;
+	MovieDto getMovie(int movieId) throws Exception;
 
 	public Map<String,Object> getAllMovies(Criteria criteria)  throws Exception;
 	

@@ -4,64 +4,92 @@ import java.io.Serializable;
 
 public class MovieDto  implements Serializable{
 	
-	private int 영화_ID;
-	private String 영화제목;
-	private String 영화장르;
-	private boolean 영화예매여부;
-	private String 상영장소;
-	private String 상영시간;
+	private int movieId;
+	private String movieTitle;
+	private String moviegenre;
+	private boolean reserv;
+	private String cgv;
+	private String time;
 	
-	public int get영화_ID() {
-		return 영화_ID;
+	
+	public MovieDto(int movieId, String movieTitle, String moviegenre, boolean reserv, String cgv, String time) {
+		super();
+		this.movieId = movieId;
+		this.movieTitle = movieTitle;
+		this.moviegenre = moviegenre;
+		this.reserv = reserv;
+		this.cgv = cgv;
+		this.time = time;
 	}
-	public void set영화_ID(int 영화_ID) {
-		this.영화_ID = 영화_ID;
-	}
-	public String get영화제목() {
-		return 영화제목;
-	}
-	public void set영화제목(String 영화제목) {
-		this.영화제목 = 영화제목;
-	}
-	public String get영화장르() {
-		return 영화장르;
-	}
-	public void set영화장르(String 영화장르) {
-		this.영화장르 = 영화장르;
-	}
-	public boolean is영화예매여부() {
-		return 영화예매여부;
-	}
-	public void set영화예매여부(boolean 영화예매여부) {
-		this.영화예매여부 = 영화예매여부;
-	}
-	public String get상영장소() {
-		return 상영장소;
-	}
-	public void set상영장소(String 상영장소) {
-		this.상영장소 = 상영장소;
-	}
-	public String get상영시간() {
-		return 상영시간;
-	}
-	public void set상영시간(String 상영시간) {
-		this.상영시간 = 상영시간;
-	}
+
+
 	@Override
 	public String toString() {
-		return "MovieDto [영화_ID=" + 영화_ID + ", 영화제목=" + 영화제목 + ", 영화장르=" + 영화장르 + ", 영화예매여부=" + 영화예매여부 + ", 상영장소="
-				+ 상영장소 + ", 상영시간=" + 상영시간 + "]";
+		return "MovieDto [movieId=" + movieId + ", movieTitle=" + movieTitle + ", moviegenre=" + moviegenre
+				+ ", reserv=" + reserv + ", cgv=" + cgv + ", time=" + time + "]";
 	}
-	public MovieDto(int 영화_ID, String 영화제목, String 영화장르, boolean 영화예매여부, String 상영장소, String 상영시간) {
-		super();
-		this.영화_ID = 영화_ID;
-		this.영화제목 = 영화제목;
-		this.영화장르 = 영화장르;
-		this.영화예매여부 = 영화예매여부;
-		this.상영장소 = 상영장소;
-		this.상영시간 = 상영시간;
+
+
+	public int getMovieId() {
+		return movieId;
 	}
-	
+
+
+	public void setMovieId(int movieId) {
+		this.movieId = movieId;
+	}
+
+
+	public String getMovieTitle() {
+		return movieTitle;
+	}
+
+
+	public void setMovieTitle(String movieTitle) {
+		this.movieTitle = movieTitle;
+	}
+
+
+	public String getMoviegenre() {
+		return moviegenre;
+	}
+
+
+	public void setMoviegenre(String moviegenre) {
+		this.moviegenre = moviegenre;
+	}
+
+
+	public boolean isReserv() {
+		return reserv;
+	}
+
+
+	public void setReserv(boolean reserv) {
+		this.reserv = reserv;
+	}
+
+
+	public String getCgv() {
+		return cgv;
+	}
+
+
+	public void setCgv(String cgv) {
+		this.cgv = cgv;
+	}
+
+
+	public String getTime() {
+		return time;
+	}
+
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+
 	public MovieDto() {}
 	
 	//toString

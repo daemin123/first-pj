@@ -68,7 +68,7 @@
 						            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
 									  <ol class="breadcrumb">
 									    <!-- <li class="breadcrumb-item"><a href="#">HOME</a></li> -->
-									    <li class="breadcrumb-item active" aria-current="page">도서신청 확인<li>
+									    <li class="breadcrumb-item active" aria-current="page">예매신청 확인<li>
 									  </ol>
 									</nav>
 					            </div>

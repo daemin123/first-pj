@@ -93,10 +93,10 @@ public class MovieServiceImpl implements MovieService {
 
 	
 	@Override
-	public MovieDto getMovie(int 영화_ID) throws Exception{
+	public MovieDto getMovie(int movieId) throws Exception{
 		
 		
-		MovieDto dto =  dao.Select(영화_ID);
+		MovieDto dto =  dao.Select(movieId);
 		
 		return dto;
 	}

@@ -15,7 +15,7 @@ public interface MovieDao {
 	List<MovieDto> SelectAll() throws Exception;
 
 	//SELECTONE
-	MovieDto Select(int 영화_ID) throws Exception;
+	MovieDto Select(int movieId) throws Exception;
 
 	int Count() throws Exception;
 

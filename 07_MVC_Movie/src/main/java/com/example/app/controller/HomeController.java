@@ -14,7 +14,7 @@ public class HomeController implements SubController {
 		
 		try {
 			
-			request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);  경로설정 나중에 할것
+			request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);  
 			
 		
 		} catch (ServletException | IOException e) {

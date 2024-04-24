@@ -12,7 +12,7 @@
 						</li>
 						
 						<li>
-							<a href="">도서관소개</a>
+							<a href="">상영영화소개</a>
 							<ul>
 								<li><a href="">연혁</a></li>
 								<li><a href="">오시는길</a></li>
@@ -31,16 +31,16 @@
 							 -->
 						</li>
 						<li>
-							<a href="">도서서비스</a>
+							<a href="">영화서비스</a>
 							<ul>
 								
-								<li><a href="${pageContext.request.contextPath}/book/list">도서조회[ALL]</a></li>
-								<li><a href="javascript:void(0)">도서대여신청[회원]</a></li>
-								<li><a href="">대여신청확인[사서]</a></li>
-								<li><a href="">예약신청확인[사서]</a></li>
-								<li><a href="${pageContext.request.contextPath}/book/add">도서등록[사서]</a></li>
-								<li><a href="">도서수정[사서]</a></li>
-								<li><a href="">도서삭제[사서]</a></li>
+								<li><a href="${pageContext.request.contextPath}/movie/list">영화조회[ALL]</a></li>
+								<li><a href="javascript:void(0)">영화예매신청[회원]</a></li>
+								<li><a href="">예매신청확인[사서]</a></li>
+								<li><a href="">예매신청확인[사서]</a></li>
+								<li><a href="${pageContext.request.contextPath}/movie/add">영화등록[사서]</a></li>
+								<li><a href="">영화수정[사서]</a></li>
+								<li><a href="">영화삭제[사서]</a></li>
  								
 							</ul>
 						</li>

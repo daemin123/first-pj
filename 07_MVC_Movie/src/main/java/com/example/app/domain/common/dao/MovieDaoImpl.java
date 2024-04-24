@@ -28,12 +28,12 @@ public class MovieDaoImpl extends CommonDao implements MovieDao {
 	@Override
 	public boolean Insert(MovieDto dto) throws Exception{
 		pstmt = conn.prepareStatement("insert into movie values(?,?,?,?,?,?)");
-		pstmt.setInt(1, dto.get영화_ID());
-		pstmt.setString(2, dto.get영화제목());
-		pstmt.setString(3, dto.get영화장르());
-		pstmt.setBoolean(4, dto.is영화예매여부());
-		pstmt.setString(5, dto.get상영장소());
-		pstmt.setString(6, dto.get상영시간());
+		dto.setMovieId(rs.getInt("영화_ID"));
+		dto.setMovieTitle(rs.getString("영화제목"));
+		dto.setMoviegenre(rs.getString("영화장르"));
+		dto.setReserv(rs.getBoolean("영화예매여부"));
+		dto.setCgv(rs.getString("상영장소"));
+		dto.setTime(rs.getString("상영시간"));
 		int result = pstmt.executeUpdate();
 		
 		freeConnection(pstmt);
@@ -54,12 +54,12 @@ public class MovieDaoImpl extends CommonDao implements MovieDao {
 		{
 			while(rs.next()) {
 				dto = new MovieDto();
-				dto.set영화_ID(rs.getInt("영화_ID"));
-				dto.set영화제목(rs.getString("영화제목"));
-				dto.set영화장르(rs.getString("영화장르"));
-				dto.set영화예매여부(rs.getBoolean("영화예매여부"));
-				dto.set상영장소(rs.getString("상영장소"));
-				dto.set상영시간(rs.getString("상영시간"));
+				dto.setMovieId(rs.getInt("영화_ID"));
+				dto.setMovieTitle(rs.getString("영화제목"));
+				dto.setMoviegenre(rs.getString("영화장르"));
+				dto.setReserv(rs.getBoolean("영화예매여부"));
+				dto.setCgv(rs.getString("상영장소"));
+				dto.setTime(rs.getString("상영시간"));
 			
 				list.add(dto);
 			}
@@ -73,9 +73,9 @@ public class MovieDaoImpl extends CommonDao implements MovieDao {
 	
 	//SELECTONE
 	@Override
-	public MovieDto Select(int 영화_ID) throws Exception {
+	public MovieDto Select(int movieId) throws Exception {
 		pstmt = conn.prepareStatement("select * from movie where 영화_ID=?");
-		pstmt.setInt(1, 영화_ID);
+		pstmt.setInt(1, movieId);
 		rs =  pstmt.executeQuery();
 		
 		MovieDto dto = null;
@@ -83,12 +83,12 @@ public class MovieDaoImpl extends CommonDao implements MovieDao {
 		{
 				rs.next();
 				dto = new MovieDto();
-				dto.set영화_ID(rs.getInt("영화_ID"));
-				dto.set영화제목(rs.getString("영화제목"));
-				dto.set영화장르(rs.getString("영화장르"));
-				dto.set영화예매여부(rs.getBoolean("영화예매여부"));
-				dto.set상영장소(rs.getString("상영장소"));
-				dto.set상영시간(rs.getString("상영시간"));		
+				dto.setMovieId(rs.getInt("영화_ID"));
+				dto.setMovieTitle(rs.getString("영화제목"));
+				dto.setMoviegenre(rs.getString("영화장르"));
+				dto.setReserv(rs.getBoolean("영화예매여부"));
+				dto.setCgv(rs.getString("상영장소"));
+				dto.setTime(rs.getString("상영시간"));		
 		}	
 		
 		freeConnection(pstmt,rs);
@@ -137,12 +137,12 @@ public class MovieDaoImpl extends CommonDao implements MovieDao {
 		{
 			while(rs.next()) {
 				dto = new MovieDto();
-				dto.set영화_ID(rs.getInt("영화_ID"));
-				dto.set영화제목(rs.getString("영화제목"));
-				dto.set영화장르(rs.getString("영화장르"));
-				dto.set영화예매여부(rs.getBoolean("영화예매여부"));
-				dto.set상영장소(rs.getString("상영장소"));
-				dto.set상영시간(rs.getString("상영시간"));
+				dto.setMovieId(rs.getInt("영화_ID"));
+				dto.setMovieTitle(rs.getString("영화제목"));
+				dto.setMoviegenre(rs.getString("영화장르"));
+				dto.setReserv(rs.getBoolean("영화예매여부"));
+				dto.setCgv(rs.getString("상영장소"));
+				dto.setTime(rs.getString("상영시간"));
 				list.add(dto);
 			}
 		}	
@@ -153,7 +153,7 @@ public class MovieDaoImpl extends CommonDao implements MovieDao {
 	}	
 	@Override
 	public List<MovieDto> selectAll(int offset, int amount, Criteria criteria) throws Exception {
-		pstmt = conn.prepareStatement("select * from movie where "+criteria.getType()+" like '%"+criteria.getKeyword()+"%' order by bookCode desc limit ?,?");
+		pstmt = conn.prepareStatement("select * from movie where "+criteria.getType()+" like '%"+criteria.getKeyword()+"%' order by 영화_ID desc limit ?,?");
 		pstmt.setInt(1, offset);
 		pstmt.setInt(2, amount);
 		rs =  pstmt.executeQuery();
@@ -163,12 +163,12 @@ public class MovieDaoImpl extends CommonDao implements MovieDao {
 		{
 			while(rs.next()) {
 				dto = new MovieDto();
-				dto.set영화_ID(rs.getInt("영화_ID"));
-				dto.set영화제목(rs.getString("영화제목"));
-				dto.set영화장르(rs.getString("영화장르"));
-				dto.set영화예매여부(rs.getBoolean("영화예매여부"));
-				dto.set상영장소(rs.getString("상영장소"));
-				dto.set상영시간(rs.getString("상영시간"));
+				dto.setMovieId(rs.getInt("영화_ID"));
+				dto.setMovieTitle(rs.getString("영화제목"));
+				dto.setMoviegenre(rs.getString("영화장르"));
+				dto.setReserv(rs.getBoolean("영화예매여부"));
+				dto.setCgv(rs.getString("상영장소"));
+				dto.setTime(rs.getString("상영시간"));
 				list.add(dto);
 			}
 		}	

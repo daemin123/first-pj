@@ -72,7 +72,7 @@ public class MovieListController  implements SubController{
 			request.setAttribute("pageDto", returnValue.get("pageDto"));
 			request.setAttribute("count", returnValue.get("count"));
 
-			request.getRequestDispatcher("/WEB-INF/view/book/list.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/view/movie/list.jsp").forward(request, response);
 							
 		
 			
