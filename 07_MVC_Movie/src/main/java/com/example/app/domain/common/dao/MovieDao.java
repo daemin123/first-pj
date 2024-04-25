@@ -24,4 +24,6 @@ public interface MovieDao {
 	int Count(Criteria criteria) throws Exception;
 
 	List<MovieDto> selectAll(int offset, int amount, Criteria criteria) throws Exception;
+
+	boolean Delete(int movieId) throws Exception;
 }
