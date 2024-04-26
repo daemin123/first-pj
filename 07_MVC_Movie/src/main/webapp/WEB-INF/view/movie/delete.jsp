@@ -49,7 +49,7 @@
             
             <section class="search-block layout-150">
        
-            	<form action="${pageContext.request.contextPath}/movie/list">          		
+            	<form action="${pageContext.request.contextPath}/movie/delete">          		
             		<div class="m-2">
 	            		<select name="type" id="" class="form-select">
 	            			<option value="영화_ID" selected>영화_ID</option>
@@ -102,6 +102,18 @@
 								<td>${movieDto.reserv}</td>
 								<td>${movieDto.cgv}</td>
 								<td>${movieDto.time}</td>
+								<td>
+									<form action="${pageContext.request.contextPath}/movie/update" method="GET">
+									    <input type="hidden" name="movieId" value="${movieDto.movieId}">
+									    <button type="submit" class="btn btn-secondary">수정</button>
+									</form>
+								</td>
+								<td>
+									<form action="${pageContext.request.contextPath}/movie/delete" method="POST">
+									    <input type="hidden" name="movieId" value="${movieDto.movieId}">
+									    <button type="submit" class="btn btn-secondary" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</button>
+									</form>
+								</td>
 						</tr>          		
             		</c:forEach>
 
@@ -117,7 +129,7 @@
 					    <!-- prev -->
  						<c:if test="${pageDto.prev}">
 	 						<li class="page-item">
-								   <a class="page-link" href="${pageContext.request.contextPath}/movie/list?pageNo=${pageDto.nowBlock*pageDto.pagePerBlock-pageDto.pagePerBlock*2+1}" aria-label="Previous">
+								   <a class="page-link" href="${pageContext.request.contextPath}/movie/delete?pageNo=${pageDto.nowBlock*pageDto.pagePerBlock-pageDto.pagePerBlock*2+1}" aria-label="Previous">
 								        <span aria-hidden="true">&laquo;</span>
 								   </a>
 							</li>  							
@@ -128,7 +140,7 @@
 					    <!-- paging -->
 						<c:forEach 	var="pageNo"	begin="${pageDto.startPage}" end="${pageDto.endPage}" 	step="1">
 							<li class="page-item">
-								<a class="page-link" href="${pageContext.request.contextPath}/movie/list?pageNo=${pageNo}">${pageNo}</a>
+								<a class="page-link" href="${pageContext.request.contextPath}/movie/delete?pageNo=${pageNo}">${pageNo}</a>
 							</li>
 						</c:forEach>
 						
@@ -138,7 +150,7 @@
 					    <!-- next -->
 					   	<c:if test="${pageDto.next}">
 							<li class="page-item">
-								      <a class="page-link" href="${pageContext.request.contextPath}/movie/list?pageNo=${pageDto.nowBlock*pageDto.pagePerBlock+1}" aria-label="Next">
+								      <a class="page-link" href="${pageContext.request.contextPath}/movie/delete?pageNo=${pageDto.nowBlock*pageDto.pagePerBlock+1}" aria-label="Next">
 								        	<span aria-hidden="true">&raquo;</span>
 								      </a>
 							</li>
@@ -148,6 +160,23 @@
 					</nav>
             </section>
             
+            <script>
+    function submitHandler(event) {
+        // 기본 동작 방지
+        event.preventDefault();
+        
+        // 폼 요소 가져오기
+        var form = event.target;
+        
+        // hidden input의 값을 가져와서 콘솔에 출력
+        var movieId = form.querySelector('input[name="movieId"]').value;
+        console.log("클릭된 버튼의 movieId 값: " + movieId);
+        
+        // 폼 제출
+        form.submit();
+    }
+</script>
+
             
         </main>
         

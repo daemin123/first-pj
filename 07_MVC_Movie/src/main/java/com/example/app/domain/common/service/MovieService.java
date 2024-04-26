@@ -16,4 +16,8 @@ public interface MovieService {
 
 	public Map<String,Object> getAllMovies(Criteria criteria)  throws Exception;
 	
+	void removeMovie(int movieId) throws Exception;
+	
+	boolean updateMovie(MovieDto dto) throws Exception;
+	
 }

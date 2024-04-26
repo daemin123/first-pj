@@ -101,5 +101,21 @@ public class MovieServiceImpl implements MovieService {
 		return dto;
 	}
 
+	@Override
+	public void removeMovie(int movieId) throws Exception {
+		connectionPool.txStart();
+			dao.Delete(movieId);
+		System.out.println(dao.Delete(movieId));
+		connectionPool.txCommit();
+		
+		
+	}
+	public boolean updateMovie(MovieDto dto) throws Exception {
+		connectionPool.txStart();
+		dao.Update(dto);
+		connectionPool.txCommit();
+		return dao.Update(dto);
+	}
+
 
 }

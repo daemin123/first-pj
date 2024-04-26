@@ -176,6 +176,29 @@ public class MovieDaoImpl extends CommonDao implements MovieDao {
 		freeConnection(pstmt,rs);
 		return list;
 	}
+	@Override
+	public boolean Delete(int movieId) throws Exception{
+		pstmt = conn.prepareStatement("delete from moviedb.movie where 영화_ID=?");
+		pstmt.setInt(1, movieId);
+		int result = pstmt.executeUpdate();
+		freeConnection(pstmt,rs);
+		System.out.println("삭제완료");
+		return result>0;
+	}
+	
+	public boolean Update(MovieDto dto) throws Exception{
+		pstmt = conn.prepareStatement("update moviedb.movie set 영화제목=?,영화장르=?,영화예매여부=?,상영장소=?,상영시간=? where 영화_ID=?");
+		pstmt.setString(1,dto.getMovieTitle());
+		pstmt.setString(2,dto.getMoviegenre());
+		pstmt.setBoolean(3, dto.isReserv());
+		pstmt.setString(4,dto.getCgv());
+		pstmt.setString(5,dto.getTime());
+		pstmt.setInt(6, dto.getMovieId());
+		int result = pstmt.executeUpdate();
+		freeConnection(pstmt,rs);
+		System.out.println("수정완료");
+		return result>0;
+	}
 	
 	
 	

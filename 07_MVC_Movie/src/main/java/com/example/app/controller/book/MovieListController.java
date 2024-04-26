@@ -40,6 +40,9 @@ public class MovieListController  implements SubController{
 			String keyword = request.getParameter("keyword");
 			String pageNo =  request.getParameter("pageNo");
 			
+			
+			
+			
 			//1
 			//1000건 -> 한페이지에 10건 -> 100페이지
 			//PageNo : 1

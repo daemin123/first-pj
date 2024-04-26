@@ -10,6 +10,15 @@ public class MovieReadController  implements SubController{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("MovieListController's execute() invoke");		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }
