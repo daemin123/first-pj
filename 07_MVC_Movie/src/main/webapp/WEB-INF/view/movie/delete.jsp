@@ -103,12 +103,6 @@
 								<td>${movieDto.cgv}</td>
 								<td>${movieDto.time}</td>
 								<td>
-									<form action="${pageContext.request.contextPath}/movie/update" method="GET">
-									    <input type="hidden" name="movieId" value="${movieDto.movieId}">
-									    <button type="submit" class="btn btn-secondary">수정</button>
-									</form>
-								</td>
-								<td>
 									<form action="${pageContext.request.contextPath}/movie/delete" method="POST">
 									    <input type="hidden" name="movieId" value="${movieDto.movieId}">
 									    <button type="submit" class="btn btn-secondary" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</button>

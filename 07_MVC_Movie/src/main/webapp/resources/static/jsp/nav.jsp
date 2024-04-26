@@ -39,7 +39,7 @@
 								<li><a href="">예매신청확인[사서]</a></li>
 								<li><a href="">예매신청확인[사서]</a></li>
 								<li><a href="${pageContext.request.contextPath}/movie/add">영화등록[사서]</a></li>
-								<li><a href="">영화수정[사서]</a></li>
+								<li><a href="${pageContext.request.contextPath}/movie/update">영화수정[사서]</a></li>
 								<li><a href="${pageContext.request.contextPath}/movie/delete">영화삭제[사서]</a></li>
  								
 							</ul>

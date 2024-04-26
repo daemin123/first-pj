@@ -25,7 +25,8 @@ public interface MovieDao {
 
 	List<MovieDto> selectAll(int offset, int amount, Criteria criteria) throws Exception;
 
-	boolean Delete(int movieId) throws Exception;
+
+	boolean update(MovieDto movieDto) throws Exception;
 	
-	boolean Update(MovieDto dto) throws Exception;
+	boolean Delete(int movieId) throws Exception;
 }

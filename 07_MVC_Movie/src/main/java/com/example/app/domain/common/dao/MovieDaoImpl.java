@@ -41,7 +41,40 @@ public class MovieDaoImpl extends CommonDao implements MovieDao {
 	}
 	
 	//UPDATE
+	 @Override
+	    public boolean update(MovieDto movieDto) throws Exception {
+	        
+	        
+	        try {
+	             // 데이터베이스 연결을 가져옵니다.
+	            String sql = "UPDATE movie SET movie_title=?, movie_genre=?, reserv=?, cgv=?, time=? WHERE movie_id=?";
+	            pstmt = conn.prepareStatement(sql);
+	            pstmt.setString(1, movieDto.getMovieTitle());
+	            pstmt.setString(2, movieDto.getMoviegenre());
+	            pstmt.setBoolean(3, movieDto.isReserv());
+	            pstmt.setString(4, movieDto.getCgv());
+	            pstmt.setString(5, movieDto.getTime());
+	            pstmt.setInt(6, movieDto.getMovieId());
+	            
+	            int result = pstmt.executeUpdate(); // 업데이트 쿼리를 실행합니다.
+	            
+	            return result > 0; // 업데이트가 성공하면 true를 반환합니다.
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	            throw new Exception("Failed to update movie.");
+	        
+	        }
+	    }
 	//DELETE
+	 @Override
+		public boolean Delete(int movieId) throws Exception{
+			pstmt = conn.prepareStatement("delete from moviedb.movie where 영화_ID=?");
+			pstmt.setInt(1, movieId);
+			int result = pstmt.executeUpdate();
+			freeConnection(pstmt,rs);
+			System.out.println("삭제완료");
+			return result>0;
+		}
 	
 	//SELECTALL
 	@Override
@@ -175,29 +208,6 @@ public class MovieDaoImpl extends CommonDao implements MovieDao {
 	
 		freeConnection(pstmt,rs);
 		return list;
-	}
-	@Override
-	public boolean Delete(int movieId) throws Exception{
-		pstmt = conn.prepareStatement("delete from moviedb.movie where 영화_ID=?");
-		pstmt.setInt(1, movieId);
-		int result = pstmt.executeUpdate();
-		freeConnection(pstmt,rs);
-		System.out.println("삭제완료");
-		return result>0;
-	}
-	
-	public boolean Update(MovieDto dto) throws Exception{
-		pstmt = conn.prepareStatement("update moviedb.movie set 영화제목=?,영화장르=?,영화예매여부=?,상영장소=?,상영시간=? where 영화_ID=?");
-		pstmt.setString(1,dto.getMovieTitle());
-		pstmt.setString(2,dto.getMoviegenre());
-		pstmt.setBoolean(3, dto.isReserv());
-		pstmt.setString(4,dto.getCgv());
-		pstmt.setString(5,dto.getTime());
-		pstmt.setInt(6, dto.getMovieId());
-		int result = pstmt.executeUpdate();
-		freeConnection(pstmt,rs);
-		System.out.println("수정완료");
-		return result>0;
 	}
 	
 	

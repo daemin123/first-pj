@@ -10,11 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.example.app.controller.book.MovieAddController;
-import com.example.app.controller.book.MovieDeleteController;
-import com.example.app.controller.book.MovieListController;
-import com.example.app.controller.book.MovieReadController;
-import com.example.app.controller.book.MovieUpdateController;
+import com.example.app.controller.movie.MovieAddController;
+import com.example.app.controller.movie.MovieDeleteController;
+import com.example.app.controller.movie.MovieListController;
+import com.example.app.controller.movie.MovieReadController;
+import com.example.app.controller.movie.MovieUpdateController;
+import com.example.app.controller.user.UserJoinController;
+import com.example.app.controller.user.UserLoginController;
+import com.example.app.controller.user.UserLogoutController;
 
 
 public class FrontController extends HttpServlet{
@@ -40,7 +43,9 @@ public class FrontController extends HttpServlet{
 		map.put(path+"/movie/delete", new MovieDeleteController());
 		
 		//user
-		
+		map.put(path+"/user/join", new UserJoinController());	//일반회원 | 기업회원 구분
+		map.put(path+"/user/login", new UserLoginController());
+		map.put(path+"/user/logout", new UserLogoutController());
 		
 		//lend
 		

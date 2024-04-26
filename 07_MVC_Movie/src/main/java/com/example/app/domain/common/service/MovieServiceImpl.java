@@ -15,6 +15,7 @@ public class MovieServiceImpl implements MovieService {
 	
 	private MovieDao dao;
 	private ConnectionPool connectionPool; //05-01Day
+	private MovieDao movieDao;
 	
 	private static MovieService instance ;
 	public static MovieService getInstance() throws Exception {
@@ -27,7 +28,12 @@ public class MovieServiceImpl implements MovieService {
 		
 		dao = MovieDaoImpl.getInstance();
 		this.connectionPool = ConnectionPool.getInstance();
+		
 	}
+	public MovieServiceImpl(MovieDao movieDao) {
+        this.movieDao = movieDao;
+    }
+
 	
 	@Override
 	public boolean movieRegister(MovieDto dto) throws Exception {
@@ -101,21 +107,24 @@ public class MovieServiceImpl implements MovieService {
 		return dto;
 	}
 
+
+
+
+//	@Override
+//    public boolean updateMovie(MovieDto movieDto) throws Exception {
+//        return movieDao.update(movieDto);
+//    }
+	
 	@Override
 	public void removeMovie(int movieId) throws Exception {
 		connectionPool.txStart();
-			dao.Delete(movieId);
+		dao.Delete(movieId);
 		System.out.println(dao.Delete(movieId));
 		connectionPool.txCommit();
-		
+
 		
 	}
-	public boolean updateMovie(MovieDto dto) throws Exception {
-		connectionPool.txStart();
-		dao.Update(dto);
-		connectionPool.txCommit();
-		return dao.Update(dto);
-	}
+
 
 
 }

@@ -17,10 +17,10 @@
 	<!-- common.js -->
 	<script src="${pageContext.request.contextPath}/resources/static/js/common.js" defer></script>
 	
-	<!-- movie/list.css -->
+	<!-- book/list.css -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/static/css/book/list.css" />
 	
-	<!-- movie/list.js -->
+	<!-- book/list.js -->
 	<script src="${pageContext.request.contextPath}/resources/static/js/book/list.js" defer></script>
 	
 </head>
@@ -42,22 +42,20 @@
 	            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
 				  <ol class="breadcrumb">
 				    <li class="breadcrumb-item"><a href="#">HOME</a></li>
-				    <li class="breadcrumb-item active" aria-current="page">Movie_LIST</li>
+				    <li class="breadcrumb-item active" aria-current="page">BOOK_LIST</li>
 				  </ol>
 				</nav>
             </section>
             
             <section class="search-block layout-150">
        
-            	<form action="${pageContext.request.contextPath}/movie/list">          		
+            	<form action="${pageContext.request.contextPath}/book/list">          		
             		<div class="m-2">
 	            		<select name="type" id="" class="form-select">
-	            			<option value="영화_ID" selected>영화_ID</option>
-	            			<option value="영화제목">영화제목</option>
-	            			<option value="영화장르">영화장르</option>
-	            			<option value="영화예매여부">영화예매여부</option>
-	            			<option value="상영장소">상영장소</option>
-	            			<option value="상영시간">상영시간</option>
+	            			<option value="bookCode" selected>bookCode</option>
+	            			<option value="bookName">bookName</option>
+	            			<option value="publisher">publisher</option>
+	            			<option value="isbn">isbn</option>
 	            		</select>
             		</div>
             		<div class="m-2">
@@ -86,23 +84,18 @@
             <section class="show-block">
             	<table class=table>
             		<tr>
-            			<td>영화_ID</td>
-            			<td>영화제목</td>
-            			<td>영화장르</td>
-            			<td>영화예매여부</td>
-            			<td>상영장소</td>
-            			<td>상영시간</td>
+            			<td>BOOKCODE</td>
+            			<td>BOOKNAME</td>
+            			<td>PUBLISHER</td>
+            			<td>ISBN</td>
             		</tr>
             		
-            		<c:forEach  var="movieDto"	items="${list}" varStatus="status">    		
+            		<c:forEach  var="bookDto"	items="${list}" varStatus="status">    		
 		            	<tr>	
-								<td>${movieDto.movieId}</td>
-								<td>${movieDto.movieTitle}</td>
-								<td>${movieDto.moviegenre}</td>
-								<td>${movieDto.reserv}</td>
-								<td>${movieDto.cgv}</td>
-								<td>${movieDto.time}</td>
-								<td><a href="${pageContext.request.contextPath}/movie/update?movieId=${movieDto.movieId}">Update</a></td>
+								<td>${bookDto.bookCode}</td>
+								<td>${bookDto.bookName}</td>
+								<td>${bookDto.publisher}</td>
+								<td>${bookDto.isbn}</td>
 						</tr>          		
             		</c:forEach>
 
@@ -118,7 +111,7 @@
 					    <!-- prev -->
  						<c:if test="${pageDto.prev}">
 	 						<li class="page-item">
-								   <a class="page-link" href="${pageContext.request.contextPath}/movie/list?pageNo=${pageDto.nowBlock*pageDto.pagePerBlock-pageDto.pagePerBlock*2+1}" aria-label="Previous">
+								   <a class="page-link" href="${pageContext.request.contextPath}/book/list?pageNo=${pageDto.nowBlock*pageDto.pagePerBlock-pageDto.pagePerBlock*2+1}" aria-label="Previous">
 								        <span aria-hidden="true">&laquo;</span>
 								   </a>
 							</li>  							
@@ -129,7 +122,7 @@
 					    <!-- paging -->
 						<c:forEach 	var="pageNo"	begin="${pageDto.startPage}" end="${pageDto.endPage}" 	step="1">
 							<li class="page-item">
-								<a class="page-link" href="${pageContext.request.contextPath}/movie/list?pageNo=${pageNo}">${pageNo}</a>
+								<a class="page-link" href="${pageContext.request.contextPath}/book/list?pageNo=${pageNo}">${pageNo}</a>
 							</li>
 						</c:forEach>
 						
@@ -139,7 +132,7 @@
 					    <!-- next -->
 					   	<c:if test="${pageDto.next}">
 							<li class="page-item">
-								      <a class="page-link" href="${pageContext.request.contextPath}/movie/list?pageNo=${pageDto.nowBlock*pageDto.pagePerBlock+1}" aria-label="Next">
+								      <a class="page-link" href="${pageContext.request.contextPath}/book/list?pageNo=${pageDto.nowBlock*pageDto.pagePerBlock+1}" aria-label="Next">
 								        	<span aria-hidden="true">&raquo;</span>
 								      </a>
 							</li>
