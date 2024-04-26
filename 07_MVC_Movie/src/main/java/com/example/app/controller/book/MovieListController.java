@@ -39,8 +39,6 @@ public class MovieListController  implements SubController{
 			String type = request.getParameter("type");
 			String keyword = request.getParameter("keyword");
 			String pageNo =  request.getParameter("pageNo");
-			String deleteid2 = request.getParameter("movieId");
-			int deleteid = Integer.parseInt(deleteid2);
 			
 			
 			

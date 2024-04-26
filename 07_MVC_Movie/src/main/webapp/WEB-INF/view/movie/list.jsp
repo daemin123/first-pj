@@ -102,12 +102,6 @@
 								<td>${movieDto.reserv}</td>
 								<td>${movieDto.cgv}</td>
 								<td>${movieDto.time}</td>
-								<td>
-									<form action="${pageContext.request.contextPath}/movie/list" method="POST">
-								  		<input type="hidden" name="movieId" value="${movieDto.movieId}">
-								    	<button type="submit" class="btn btn-secondary">삭제</button>
-									</form>
-								</td>
 						</tr>          		
             		</c:forEach>
 
@@ -154,23 +148,6 @@
 					</nav>
             </section>
             
-            <script>
-    function submitHandler(event) {
-        // 기본 동작 방지
-        event.preventDefault();
-        
-        // 폼 요소 가져오기
-        var form = event.target;
-        
-        // hidden input의 값을 가져와서 콘솔에 출력
-        var movieId = form.querySelector('input[name="movieId"]').value;
-        console.log("클릭된 버튼의 movieId 값: " + movieId);
-        
-        // 폼 제출
-        form.submit();
-    }
-</script>
-
             
         </main>
         
